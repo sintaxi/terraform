@@ -1,0 +1,19 @@
+{
+  "name": "harp-processor",
+  "version": "0.1.0",
+  "description": "Pre-processor for the Harp APF",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "Brock Whitten <brock@chloi.io>",
+  "license": "MIT",
+  "dependencies": {
+    "jade": "0.28.2",
+    "less": "1.3.3"
+  },
+  "devDependencies": {
+    "mocha": "1.8.2",
+    "should": "1.2.2"
+  }
+}
