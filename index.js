@@ -1,10 +1,9 @@
 var fs   = require('fs')
 var path = require('path')
-var jade = require("./lib/processors/jade")
 
-var map = {
-  "html"  : ["jade"],
-  "css"   : ["less"]
+var processors = {
+  "jade" : require("./lib/processors/jade"),
+  "less" : require("./lib/processors/less")
 }
 
 exports.path = function(sourcePath, callback){
@@ -12,8 +11,13 @@ exports.path = function(sourcePath, callback){
 }
 
 exports.process = function(sourcePath, options, callback){
-  jade(sourcePath, options, function(error, contents){
+  
+  // get extension
+  var ext = path.extname(sourcePath).replace(/^\./, '')
+  
+  // giddy up!
+  processors[ext](sourcePath, options, function(error, contents){
     callback(error, contents)
-  })
+  }) 
   
 }
