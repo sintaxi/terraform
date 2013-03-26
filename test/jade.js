@@ -22,8 +22,11 @@ describe("basic", function(){
   
   it("should return errors if error found", function(done){
     processor.process("invalid.jade", { root: __dirname + "/jade-fixtures" }, function(error, contents){
-      should.exist(error)
       should.not.exist(contents)
+      should.exist(error)
+      error.should.have.property("name")
+      error.should.have.property("message")
+      error.should.have.property("stack")
       done()
     })
   })

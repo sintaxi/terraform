@@ -25,4 +25,15 @@ describe("less", function(){
     })
   })
   
+  it("should return errors if error found", function(done){
+    processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, contents){
+      should.not.exist(contents)
+      should.exist(error)
+      error.should.have.property("name")
+      error.should.have.property("message")
+      error.should.have.property("stack")
+      done()
+    })
+  })
+  
 })
