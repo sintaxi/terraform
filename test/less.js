@@ -24,6 +24,13 @@ describe("less", function(){
   it("should return errors if error found", function(done){
     processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, info, body){
       should.not.exist(body)
+      
+      should.exist(info)
+      info.sourcePath.should.eql("invalid.less")
+      info.sourceType.should.eql("less")
+      info.outputPath.should.eql("invalid.css")
+      info.outputType.should.eql("css")
+      
       should.exist(error)
       error.should.have.property("name")
       error.should.have.property("message")
