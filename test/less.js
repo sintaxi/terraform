@@ -10,24 +10,20 @@ describe("less", function(){
   })
   
   it("should have basic css file", function(done){
-    processor.process("main.less", { root: __dirname + "/less-fixtures" }, function(error, contents){
+    processor.process("main.less", { root: __dirname + "/less-fixtures" }, function(error, info, body){
       should.not.exist(error)
-      contents.should.include("body{background:pink;}")
+      info.sourcePath.should.eql("main.less")
+      info.sourceType.should.eql("less")
+      info.outputPath.should.eql("main.css")
+      info.outputType.should.eql("css")
+      body.should.include("body{background:pink;}")
       done()
     })
   })
   
   it("should return errors if error found", function(done){
-    processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, contents){
-      should.exist(error)
-      should.not.exist(contents)
-      done()
-    })
-  })
-  
-  it("should return errors if error found", function(done){
-    processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, contents){
-      should.not.exist(contents)
+    processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, info, body){
+      should.not.exist(body)
       should.exist(error)
       error.should.have.property("name")
       error.should.have.property("message")

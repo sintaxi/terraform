@@ -12,6 +12,10 @@ describe("basic", function(){
   it("should have jade partial layout and include working", function(done){
     processor.process("index.jade", { root: __dirname + "/jade-fixtures" }, function(error, info, body){
       should.not.exist(error)
+      info.sourcePath.should.eql("index.jade")
+      info.sourceType.should.eql("jade")
+      info.outputPath.should.eql("index.html")
+      info.outputType.should.eql("html")
       body.should.include("<h1>Sintaxi</h1>")
       body.should.include("<h2>Hello World</h2>")
       body.should.include("<h3>Brock Whitten</h3>")
