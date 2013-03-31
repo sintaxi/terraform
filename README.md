@@ -1,60 +1,12 @@
-# harp-processor
+# polymer
 
 Pre-processor for the Harp APF.
 
-## API
-
-    processor.outputPath(sourcePath)
-    processor.sourcePath(url)
-    processor.sourcePathList(url)
-    processor.render(sourcePath, callback)
-    processor.processFromPath(sourcePath, callback)
-    processor.processFromUrl(url, callback)
-
 ## Usage
 
-Returns the output path.
+    var polymer = require('polymer')
 
-    processor.outputPath(sourcePath)
-
-Simply pass in the path to the source file and you get your output. No fuss.
-
-    processor.render(sourcePath, function(error, contents){
-
+    polymer.process("foo.jade", { root: __dirname }, function(error, body){
+      console.log(body)
     })
-
-A superset of these commands is the `process` method.
-
-    processor.processFromFile(filePath, function(error, reply){
-      reply.type
-      reply.outputPath
-      reply.output
-
-      OR
-
-      error.type
-      error.sourcePath
-      error.name
-      error.message
-      error.output
-
-    })
-
-    processor.processFromUrl(urlPath, function(error, reply){
-      reply.type
-      reply.outputPath
-      reply.output
-
-      OR
-
-      error.type
-      error.sourcePath
-      error.name
-      error.message
-      error.output
-    })
-
-
-
-
 
