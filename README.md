@@ -6,7 +6,7 @@ Pre-processor for the Harp APF.
 
     var polymer = require('polymer')
 
-    polymer.process("foo.jade", { root: __dirname }, function(error, body){
+    polymer.process("foo.jade", { root: __dirname }, function(error, info, body){
       console.log(body)
     })
 

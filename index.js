@@ -18,7 +18,7 @@ exports.process = function(sourcePath, options, callback){
   
   // giddy up!
   processors[ext](sourcePath, options, function(error, contents){
-    callback(error, contents)
+    callback(error, {}, contents)
   }) 
   
 }
