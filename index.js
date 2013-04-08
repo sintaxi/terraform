@@ -1,33 +1,7 @@
-var fs   = require('fs')
-var path = require('path')
+var fs      = require('fs')
+var path    = require('path')
 var helpers = require('./lib/helpers')
-
-var processors = {
-  "jade" : require("./lib/processors/jade"),
-  "less" : require("./lib/processors/less")
-}
-
-exports.project = function(root, globals){
-  
-  return {
-    
-    process: function(sourcePath, locals, callback){
-      
-      var layoutPath = fetchLayout()
-      
-      var template = function(sourcePath, locals, cb){
-        
-      }
-      
-      template( { layout: layoutPath })
-    }
-    
-  }
-  
-}
-
-// export
-exports.path = helpers.outputFilename
+var scope   = require('./lib/partial')
 
 exports.process = function(sourcePath, options, callback){
   
@@ -41,9 +15,13 @@ exports.process = function(sourcePath, options, callback){
     outputType: helpers.outputType(sourcePath),
   }
   
-  // giddy up!
-  processors[ext](sourcePath, options, function(error, contents){
-    callback(error, info, contents)
-  }) 
+  var proj = scope(options.root, { "globals": {} })
+  
+  try{
+    var output = proj.partial(sourcePath, { layout: "_layout.jade" })
+    callback(null, info, output)
+  }catch(e){
+    callback(e, info)
+  }
   
 }
