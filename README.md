@@ -10,3 +10,11 @@ Pre-processor for the Harp APF.
       console.log(body)
     })
 
+
+
+var polymer = require('polymer')
+var project = polymer.project("/foobar", globals)
+
+project.process(path, locals, function(error, info, body){
+  
+})

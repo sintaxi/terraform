@@ -2,6 +2,8 @@ var should    = require('should')
 var processor = require('../')
 
 describe("basic", function(){
+  
+  var root = __dirname + "/fixtures/jade-fixtures"
 
   it("should exist", function(done){
     should.exist(processor)
@@ -10,7 +12,7 @@ describe("basic", function(){
   })
 
   it("should have jade partial layout and include working", function(done){
-    processor.process("index.jade", { root: __dirname + "/jade-fixtures" }, function(error, info, body){
+    processor.process("index.jade", { root: root }, function(error, info, body){
       should.not.exist(error)
       
       should.exist(info)
@@ -29,7 +31,7 @@ describe("basic", function(){
   })
 
   it("should return errors if error found", function(done){
-    processor.process("invalid.jade", { root: __dirname + "/jade-fixtures" }, function(error, info, body){
+    processor.process("invalid.jade", { root: root }, function(error, info, body){
       should.not.exist(body)
       
       should.exist(info)

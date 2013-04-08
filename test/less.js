@@ -3,6 +3,8 @@ var processor = require('../')
 
 describe("less", function(){
   
+  var root = __dirname + '/fixtures/less-fixtures'
+  
   it("should exist", function(done){
     should.exist(processor)
     processor.should.have.property("process")
@@ -10,7 +12,7 @@ describe("less", function(){
   })
   
   it("should have basic css file", function(done){
-    processor.process("main.less", { root: __dirname + "/less-fixtures" }, function(error, info, body){
+    processor.process("main.less", { root: root }, function(error, info, body){
       should.not.exist(error)
       info.sourcePath.should.eql("main.less")
       info.sourceType.should.eql("less")
@@ -22,7 +24,7 @@ describe("less", function(){
   })
   
   it("should return errors if error found", function(done){
-    processor.process("invalid.less", { root: __dirname + "/less-fixtures" }, function(error, info, body){
+    processor.process("invalid.less", { root: root }, function(error, info, body){
       should.not.exist(body)
       
       should.exist(info)

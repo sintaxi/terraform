@@ -7,6 +7,24 @@ var processors = {
   "less" : require("./lib/processors/less")
 }
 
+exports.project = function(root, globals){
+  
+  return {
+    
+    process: function(sourcePath, locals, callback){
+      
+      var layoutPath = fetchLayout()
+      
+      var template = function(sourcePath, locals, cb){
+        
+      }
+      
+      template( { layout: layoutPath })
+    }
+    
+  }
+  
+}
 
 // export
 exports.path = helpers.outputFilename
