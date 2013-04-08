@@ -3,7 +3,7 @@ var path        = require('path')
 var helpers     = require('./lib/helpers')
 
 var template    = require('./lib/template')
-var stylesheet  = require('./lib/processors/less')
+var stylesheet  = require('./lib/stylesheet')
 
 exports.process = function(sourcePath, options, callback){
   
