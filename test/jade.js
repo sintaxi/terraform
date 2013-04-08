@@ -16,8 +16,14 @@ describe("basic", function(){
       should.not.exist(error)
       
       should.exist(info)
+      info.sourcePath.should.eql("stuff.md")
+      info.sourceType.should.eql("md")
+      info.outputPath.should.eql("stuff.html")
+      info.outputType.should.eql("html")
+      
       should.exist(body)
       body.should.include("<h1>hello markdown</h1>")
+      body.should.include("<p>")
       done()
     })
   })
@@ -40,7 +46,7 @@ describe("basic", function(){
       done()
     })
   })
-  // 
+
   // it("should return errors if error found", function(done){
   //   processor.process("invalid.jade", { root: root }, function(error, info, body){
   //     should.not.exist(body)
