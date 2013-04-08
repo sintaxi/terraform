@@ -20,7 +20,7 @@ exports.process = function(sourcePath, options, callback){
   /**
    * Templates
    */ 
-  if(["jade"].indexOf(ext) !== -1) {
+  if(["jade", "md"].indexOf(ext) !== -1) {
     var render = template
   
   /**
