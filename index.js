@@ -1,7 +1,9 @@
-var fs      = require('fs')
-var path    = require('path')
-var helpers = require('./lib/helpers')
-var scope   = require('./lib/partial')
+var fs          = require('fs')
+var path        = require('path')
+var helpers     = require('./lib/helpers')
+
+var template    = require('./lib/template')
+var stylesheet  = require('./lib/processors/less')
 
 exports.process = function(sourcePath, options, callback){
   
@@ -12,16 +14,17 @@ exports.process = function(sourcePath, options, callback){
     sourcePath: sourcePath,
     sourceType: ext,
     outputPath: helpers.outputPath(sourcePath),
-    outputType: helpers.outputType(sourcePath),
+    outputType: helpers.outputType(sourcePath)
   }
   
-  var proj = scope(options.root, { "globals": {} })
-  
-  try{
-    var output = proj.partial(sourcePath, { layout: "_layout.jade" })
-    callback(null, info, output)
-  }catch(e){
-    callback(e, info)
+  if(["jade", "ejs", "md"].indexOf(ext) !== -1) {
+    var render = template
+  }else if(["less", "style", "sass"].indexOf(ext) !== -1){
+    var render = stylesheet
   }
+  
+  render(sourcePath, options, function(err, output){
+    callback(err, info, output)
+  })
   
 }
