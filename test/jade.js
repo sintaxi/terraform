@@ -3,7 +3,7 @@ var processor = require('../')
 
 describe("basic", function(){
   
-  var root = __dirname + "/fixtures/jade-fixtures"
+  var root = __dirname + "/fixtures/templates"
 
   it("should exist", function(done){
     should.exist(processor)

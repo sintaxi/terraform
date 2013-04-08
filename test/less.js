@@ -3,7 +3,7 @@ var processor = require('../')
 
 describe("less", function(){
   
-  var root = __dirname + '/fixtures/less-fixtures'
+  var root = __dirname + '/fixtures/stylesheets'
   
   it("should exist", function(done){
     should.exist(processor)
