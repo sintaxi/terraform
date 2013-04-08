@@ -17,9 +17,16 @@ exports.process = function(sourcePath, options, callback){
     outputType: helpers.outputType(sourcePath)
   }
   
-  if(["jade", "ejs", "md"].indexOf(ext) !== -1) {
+  /**
+   * Templates
+   */ 
+  if(["jade"].indexOf(ext) !== -1) {
     var render = template
-  }else if(["less", "style", "sass"].indexOf(ext) !== -1){
+  
+  /**
+   * Stylesheets
+   */
+  }else if(["less"].indexOf(ext) !== -1){
     var render = stylesheet
   }
   
