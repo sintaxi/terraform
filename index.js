@@ -1,7 +1,6 @@
 var fs          = require('fs')
 var path        = require('path')
 var helpers     = require('./lib/helpers')
-
 var template    = require('./lib/template')
 var stylesheet  = require('./lib/stylesheet')
 
@@ -12,7 +11,7 @@ exports.process = function(sourcePath, options, callback){
   
   var info = {
     sourcePath: sourcePath,
-    sourceType: ext,
+    sourceType: helpers.sourceType(sourcePath),
     outputPath: helpers.outputPath(sourcePath),
     outputType: helpers.outputType(sourcePath)
   }
