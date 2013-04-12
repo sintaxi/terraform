@@ -1,4 +1,7 @@
 h2 Hello World
 != partial("profile.jade")
 != partial("stuff.md")
+h4= place
+pre
+  != JSON.stringify(globals, null, 2)
 include location
