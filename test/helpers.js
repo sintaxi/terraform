@@ -1,7 +1,7 @@
 var should    = require('should')
 var processor = require('../')
 
-describe("misc", function(){
+describe("helpers", function(){
   
   // it("should exist", function(done){
   //   should.exist(processor)
