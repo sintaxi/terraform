@@ -5,7 +5,7 @@ var stylesheet  = require('./lib/stylesheet')
 var template    = require('./lib/template')
 
 // expose helpers
-exports.helpers = helpers = require('./lib/helpers')
+var helpers = exports.helpers = require('./lib/helpers')
 
 exports.root = function(root, callback){
 
