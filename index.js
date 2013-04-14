@@ -2,7 +2,7 @@
 var fs          = require('fs')
 var path        = require('path')
 var stylesheet  = require('./lib/stylesheet')
-var scope       = require('./lib/template/scope')
+var template    = require('./lib/template')
 
 // expose helpers
 exports.helpers = helpers = require('./lib/helpers')
@@ -34,7 +34,7 @@ exports.root = function(root, callback){
         locals.current = helpers.getCurrent(filePath)
 
         // scope and render
-        var output = scope(root, { globals: { public: data } }).partial(filePath, locals)
+        var output = template(root, { globals: { public: data } }).partial(filePath, locals)
 
         // return
         callback(null, output)
