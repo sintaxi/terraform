@@ -1,3 +1,6 @@
 h2 Home
 
-// != partial('articles/hello-world.jade')
+h3 Articles
+
+for article, slug in globals.public.articles.data
+  != partial('articles/' + slug + '.jade')
