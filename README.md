@@ -5,16 +5,8 @@ Pre-processor for the Harp APF.
 ## Usage
 
     var polymer = require('polymer')
+    var poly    = polymer.root('path/to/project')
 
-    polymer.process("foo.jade", { root: __dirname }, function(error, info, body){
+    project.render('index.jade', function(error, body){
       console.log(body)
     })
-
-
-
-var polymer = require('polymer')
-var project = polymer.project("/foobar", globals)
-
-project.process(path, locals, function(error, info, body){
-  
-})

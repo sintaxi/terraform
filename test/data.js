@@ -16,4 +16,13 @@ describe("date", function(){
     })
   })
 
+  it("should be available in the template", function(done){
+    poly.render("articles/hello-jupiter.jade", function(error, body){
+      should.not.exist(error)
+      should.exist(body)
+      body.should.include("<h3>I was born on Jupiter</h3>")
+      done()
+    })
+  })
+
 })
