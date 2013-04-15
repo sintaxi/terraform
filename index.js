@@ -14,29 +14,62 @@ exports.root = function(root, callback){
 
   return {
 
+    /**
+     * Render
+     *
+     * This is the main method to to render a view. This function
+     * is responsible to for figuring out the layout to use. Partials
+     * may use layouts but the argument must get passed into the partial
+     * call.
+     *
+
+     *
+     */
+
     render: function(filePath, locals, callback){
 
-      // locals are optional
       if(!callback){
         callback = locals
         locals   = {}
       }
 
-      // get extension
       var ext = path.extname(filePath).replace(/^\./, '')
 
       if(["jade", "md"].indexOf(ext) !== -1) {
 
-        // layout
-        if(layout) locals['layout'] = layout
+        /**
+         * Current
+         */
 
-        // current
         locals.current = helpers.getCurrent(filePath)
 
-        // scope and render
+        /**
+         * Layout If no layout is passed in we want to use the default layout.
+         *
+         * Layout Priority:
+         *
+         *    1. passed into partial() function.
+         *    2. in `_data.json` file.
+         *    3. default layout.
+         *    4. no layout
+         */
+
+        if(!locals.hasOwnProperty('layout')){
+
+          // default layout
+          locals['layout'] = layout
+
+          // data.json layout
+          var templateLocals = helpers.walkData(locals.current.path, data)
+
+          if(templateLocals && templateLocals.hasOwnProperty('layout')){
+            locals['layout'] = templateLocals['layout']
+          }
+
+        }
+
         var output = template(root, { globals: { public: data } }).partial(filePath, locals)
 
-        // return
         callback(null, output)
 
       }else if(["less"].indexOf(ext) !== -1){
