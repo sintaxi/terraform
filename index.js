@@ -72,9 +72,13 @@ exports.root = function(root, callback){
 
         }
 
-        var output = template(root, { globals: { public: data } }).partial(filePath, locals)
 
-        callback(null, output)
+        try{
+          var output = template(root, { globals: { public: data } }).partial(filePath, locals)
+          callback(null, output)
+        }catch(e){
+          callback(e)
+        }
 
       }else if(["less"].indexOf(ext) !== -1){
         stylesheet(root, filePath, callback)
