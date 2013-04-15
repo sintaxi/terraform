@@ -7,10 +7,23 @@ var template    = require('./lib/template')
 // expose helpers
 var helpers = exports.helpers = require('./lib/helpers')
 
-exports.root = function(root, callback){
+exports.root = function(root, globals, callback){
+
+  if(!callback){
+    callback = globals
+    globals  = {}
+  }
 
   var layout  = helpers.findFirstFile(root, ["_layout.jade", "_layout.html.jade"])
+
   var data    = helpers.dataTree(root)
+
+  var templateObject = { globals: { public: data } }
+
+  for(var key in globals){
+    templateObject['globals'][key] = globals[key]
+  }
+
 
   return {
 
@@ -74,7 +87,7 @@ exports.root = function(root, callback){
 
 
         try{
-          var output = template(root, { globals: { public: data } }).partial(filePath, locals)
+          var output = template(root, templateObject).partial(filePath, locals)
           callback(null, output)
         }catch(e){
           callback(e)
