@@ -7,10 +7,9 @@ var template    = require('./lib/template')
 // expose helpers
 var helpers = exports.helpers = require('./lib/helpers')
 
-exports.root = function(root, globals, callback){
+exports.root = function(root, globals){
 
-  if(!callback){
-    callback = globals
+  if(!globals){
     globals  = {}
   }
 
