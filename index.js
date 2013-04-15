@@ -17,12 +17,9 @@ exports.root = function(root, callback){
     /**
      * Render
      *
-     * This is the main method to to render a view. This function
-     * is responsible to for figuring out the layout to use. Partials
-     * may use layouts but the argument must get passed into the partial
-     * call.
-     *
-
+     * This is the main method to to render a view. This function is
+     * responsible to for figuring out the layout to use and sets the
+     * `current` object.
      *
      */
 
@@ -56,10 +53,17 @@ exports.root = function(root, callback){
 
         if(!locals.hasOwnProperty('layout')){
 
-          // default layout
+          /**
+           * default layout
+           */
+
           locals['layout'] = layout
 
-          // data.json layout
+
+          /**
+           * _data.json layout
+           */
+
           var templateLocals = helpers.walkData(locals.current.path, data)
 
           if(templateLocals && templateLocals.hasOwnProperty('layout')){
