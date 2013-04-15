@@ -2,9 +2,9 @@ var should    = require('should')
 var polymer   = require('../')
 
 describe("partials", function(){
-  
+
   var root = __dirname + "/fixtures/partials"
-  
+
   it("should have mixes partials with locals", function(done){
     polymer.root(root).render("index.jade", function(error, body){
       should.not.exist(error)
@@ -17,5 +17,13 @@ describe("partials", function(){
       done()
     })
   })
-  
+
+  it("should be able to reference partial without ext", function(done){
+    polymer.root(root).render("noext.jade", function(error, body){
+      should.not.exist(error)
+      should.exist(body)
+      body.should.include("<h2>Hello Brazil</h2>")
+      done()
+    })
+  })
 })
