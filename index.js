@@ -42,6 +42,11 @@ exports.root = function(root, globals){
         locals   = {}
       }
 
+      var arr = filePath.split(path.sep)
+      var startsWithUnderscore = arr.map(function(i){ return i.indexOf("_") }).indexOf(0) !== -1
+
+      if(startsWithUnderscore) return callback(null, null)
+
       var ext = path.extname(filePath).replace(/^\./, '')
 
       if(["jade", "md"].indexOf(ext) !== -1) {
