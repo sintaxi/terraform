@@ -13,4 +13,13 @@ describe("underscores", function(){
     })
   })
 
+
+  it("should ignore file if in dir beginning with underscore", function(done){
+    polymer.root(root).render("_foo/bar.jade", function(error, body){
+      should.not.exist(error)
+      should.not.exist(body)
+      done()
+    })
+  })
+
 })
