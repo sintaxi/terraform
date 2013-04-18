@@ -89,12 +89,14 @@ exports.root = function(root, globals){
 
         }
 
-
         try{
-          var output = template(root, templateObject).partial(filePath, locals)
-          callback(null, output)
+          var error   = null
+          var output  = template(root, templateObject).partial(filePath, locals)
         }catch(e){
-          callback(e)
+          var error   = e
+          var output  = null
+        }finally{
+          callback(error, output)
         }
 
       }else if(["less"].indexOf(ext) !== -1){
@@ -106,34 +108,3 @@ exports.root = function(root, globals){
   }
 
 }
-
-// exports.process = function(sourcePath, options, callback){
-//
-//   // get extension
-//   var ext = path.extname(sourcePath).replace(/^\./, '')
-//
-//   var info = {
-//     sourcePath: sourcePath,
-//     sourceType: helpers.sourceType(sourcePath),
-//     outputPath: helpers.outputPath(sourcePath),
-//     outputType: helpers.outputType(sourcePath)
-//   }
-//
-//   /**
-//    * Templates
-//    */
-//   if(["jade", "md"].indexOf(ext) !== -1) {
-//     var render = template
-//
-//   /**
-//    * Stylesheets
-//    */
-//   }else if(["less"].indexOf(ext) !== -1){
-//     var render = stylesheet
-//   }
-//
-//   render(sourcePath, options, function(err, output){
-//     callback(err, info, output)
-//   })
-//
-// }
