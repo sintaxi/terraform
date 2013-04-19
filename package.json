@@ -1,6 +1,6 @@
 {
   "name": "polymer",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Pre-processor for the Harp APF",
   "main": "index.js",
   "scripts": {
