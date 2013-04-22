@@ -101,6 +101,8 @@ exports.root = function(root, globals){
 
       }else if(["less"].indexOf(ext) !== -1){
         stylesheet(root, filePath, callback)
+      }else{
+        callback(null, null)
       }
 
 
