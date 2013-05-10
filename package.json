@@ -9,9 +9,10 @@
   "author": "Brock Whitten <brock@chloi.io>",
   "license": "MIT",
   "dependencies": {
-    "jade"  : "0.28.2",
+    "lru-cache" : "2.3.0",
+    "jade" : "0.28.2",
     "marked": "0.2.8",
-    "less"  : "1.3.3"
+    "less" : "1.3.3"
   },
   "devDependencies": {
     "mocha": "1.8.2",

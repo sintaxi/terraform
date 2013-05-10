@@ -1,11 +1,16 @@
-
 var fs          = require('fs')
 var path        = require('path')
 var stylesheet  = require('./lib/stylesheet')
 var template    = require('./lib/template')
 
+if(process.env.NODE_ENV == "production"){
+  var helpers = require('./lib/lru-helpers')
+}else{
+  var helpers = require('./lib/helpers')
+}
+
 // expose helpers
-var helpers = exports.helpers = require('./lib/helpers')
+exports.helpers = helpers
 
 exports.root = function(root, globals){
 
