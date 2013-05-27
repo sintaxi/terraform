@@ -22,12 +22,11 @@ describe("partials", function(){
     })
   })
 
-  // it("should be able to reference partial without ext", function(done){
-  //   poly.render("noext.jade", function(error, body){
-  //     should.not.exist(error)
-  //     should.exist(body)
-  //     body.should.include("<h2>Hello Brazil</h2>")
-  //     done()
-  //   })
-  // })
+  it("should not render file with underscore", function(done){
+    poly.render("_places/brazil.jade", function(error, body){
+      should.not.exist(error)
+      should.not.exist(body)
+      done()
+    })
+  })
 })
