@@ -1,7 +1,7 @@
 var should    = require('should')
 var polymer   = require('../')
 
-describe("underscores", function(){
+describe("files with underscores", function(){
 
   var root = __dirname + "/fixtures/underscores"
 

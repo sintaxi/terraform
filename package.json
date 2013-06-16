@@ -4,7 +4,7 @@
   "description": "Pre-processor for the Harp APF",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "license": "MIT",

@@ -1,7 +1,7 @@
 var should  = require('should')
 var polymer = require('../')
 
-describe("basic", function(){
+describe("jade", function(){
 
   var root = __dirname + "/fixtures/templates"
   var poly = polymer.root(root)

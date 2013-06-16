@@ -1,7 +1,7 @@
 var should    = require('should')
 var polymer   = require('../')
 
-describe("partials", function(){
+describe("partial()", function(){
 
   var root = __dirname + "/fixtures/partials"
   var poly = polymer.root(root)
