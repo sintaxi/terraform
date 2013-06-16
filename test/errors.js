@@ -10,6 +10,11 @@ describe("data", function(){
     poly.render("novar.jade", function(error, body){
       should.not.exist(body)
       should.exist(error)
+      console.log("name", error.name)
+      console.log("message", error.message)
+      console.log("--------")
+      console.log("stack", error.stack)
+      console.log("--------")
       error.should.have.property('name')
       error.should.have.property('message')
       //error.should.have.property('path')
