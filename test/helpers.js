@@ -99,6 +99,12 @@ describe("helpers", function(){
       done()
     })
 
+    it('should not ignore if no part of tree starts with underscore.', function(done){
+      var reply = polymer.helpers.shouldIgnore('foo/bar/baz.json')
+      reply.should.be.false
+      done()
+    })
+
     it('should allow underscore in names.', function(done){
       var reply = polymer.helpers.shouldIgnore('foo_/beep.json')
       reply.should.be.false
