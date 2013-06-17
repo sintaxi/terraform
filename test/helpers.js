@@ -3,23 +3,7 @@ var polymer   = require('../')
 
 describe("helpers", function(){
 
-  it("should handle missing template file.", function(done){
-    polymer.root(__dirname + "/fixtures/data").render("missing.jade", function(error, body){
-      should.not.exist(error)
-      should.not.exist(body)
-      done()
-    })
-  })
-
-  it("should handle missing stylesheet file.", function(done){
-    polymer.root(__dirname + "/fixtures/data").render("missing.less", function(error, body){
-      should.not.exist(error)
-      should.not.exist(body)
-      done()
-    })
-  })
-
-  describe('priority list', function(){
+  describe('.priorityList(filename)', function(){
 
     it('should return all possible file names for html ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('index.html')
@@ -73,47 +57,7 @@ describe("helpers", function(){
 
   })
 
-  describe('ingore', function(){
-
-    it('should ignore if starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('_beep.json')
-      reply.should.be.true
-      done()
-    })
-
-    it('should not ignore if doesnt start with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('boop.json')
-      reply.should.be.false
-      done()
-    })
-
-    it('should ignore if nested file starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('beep/_boop.json')
-      reply.should.be.true
-      done()
-    })
-
-    it('should ignore any part of tree starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('foo/_bar/baz.json')
-      reply.should.be.true
-      done()
-    })
-
-    it('should not ignore if no part of tree starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('foo/bar/baz.json')
-      reply.should.be.false
-      done()
-    })
-
-    it('should allow underscore in names.', function(done){
-      var reply = polymer.helpers.shouldIgnore('foo_/beep.json')
-      reply.should.be.false
-      done()
-    })
-
-  })
-
-  describe('outputPath', function(){
+  describe('.outputPath(filename)', function(){
     it('should convert jade to html.', function(done){
       polymer.helpers.outputPath('foobar.html').should.eql('foobar.html')
       polymer.helpers.outputPath('foobar.jade').should.eql('foobar.html')
@@ -133,6 +77,42 @@ describe("helpers", function(){
       polymer.helpers.outputPath('foobar.bar.jade').should.eql('foobar.bar')
       done()
     })
+  })
+
+  describe('.outputType(filename)', function(){
+    it('should know source type.', function(done){
+      polymer.helpers.outputType("foo.html").should.eql("html")
+      polymer.helpers.outputType("foo.jade").should.eql("html")
+      polymer.helpers.outputType("foo.md").should.eql("html")
+      polymer.helpers.outputType("foo.css").should.eql("css")
+      polymer.helpers.outputType("foo.less").should.eql("css")
+      done()
+    })
+  })
+
+  describe('.shouldIgnore(filename)', function(){
+
+    it('should return true if file begins with underscore.', function(done){
+      polymer.helpers.shouldIgnore('_foo.html').should.be.true
+      done()
+    })
+
+    it('should return false file doesnt end with underscore.', function(done){
+      polymer.helpers.shouldIgnore('foo.html').should.be.false
+      polymer.helpers.shouldIgnore('foo_.html').should.be.false
+      polymer.helpers.shouldIgnore('f_oo.html').should.be.false
+      polymer.helpers.shouldIgnore('f____.html').should.be.false
+      done()
+    })
+
+    it('should return true if any directory in path starts with underscore.', function(done){
+      polymer.helpers.shouldIgnore('foo/_bar.html').should.be.true
+      polymer.helpers.shouldIgnore('foo/_bar/baz.html').should.be.true
+      polymer.helpers.shouldIgnore('_foo/bar/baz.html').should.be.true
+      polymer.helpers.shouldIgnore('/_foo/bar/baz.html').should.be.true
+      done()
+    })
+
   })
 
 })
