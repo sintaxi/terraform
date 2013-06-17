@@ -1,12 +1,12 @@
-# polymer
+# terraform
 
-Pre-processor for the Harp APF.
+Foolproof Asset Pipeline used in the Harp APF.
 
 ## Usage
 
-    var polymer = require('polymer')
-    var poly    = polymer.root('path/to/project')
+    var terraform = require('terraform')
+    var planet    = terraform.root('path/to/project')
 
-    project.render('index.jade', function(error, body){
+    planet.render('index.jade', function(error, body){
       console.log(body)
     })
