@@ -47,10 +47,10 @@ exports.root = function(root, globals){
         locals   = {}
       }
 
-      var arr = filePath.split(path.sep)
-      var startsWithUnderscore = arr.map(function(i){ return i.indexOf("_") }).indexOf(0) !== -1
+      // ignore files that start with underscore
+      if(helpers.shouldIgnore(filePath)) return callback(null, null)
 
-      if(startsWithUnderscore) return callback(null, null)
+      var arr = filePath.split(path.sep)
 
       var ext = path.extname(filePath).replace(/^\./, '')
 
