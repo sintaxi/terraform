@@ -50,8 +50,6 @@ exports.root = function(root, globals){
       // ignore files that start with underscore
       if(helpers.shouldIgnore(filePath)) return callback(null, null)
 
-      var arr = filePath.split(path.sep)
-
       var ext = path.extname(filePath).replace(/^\./, '')
 
       if(["jade", "md"].indexOf(ext) !== -1) {

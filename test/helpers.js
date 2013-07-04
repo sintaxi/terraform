@@ -115,4 +115,26 @@ describe("helpers", function(){
 
   })
 
+  describe('.isTemplate(filename)', function(){
+
+    it('should return true if jade file.', function(done){
+      polymer.helpers.isTemplate('foo.jade').should.be.true
+      polymer.helpers.isTemplate('foo/bar/baz.jade').should.be.true
+      done()
+    })
+
+    it('should return true if markdown file.', function(done){
+      polymer.helpers.isTemplate('foo.md').should.be.true
+      polymer.helpers.isTemplate('foo/bar/baz.md').should.be.true
+      done()
+    })
+
+    it('should return false if less file.', function(done){
+      polymer.helpers.isTemplate('foo.less').should.be.false
+      polymer.helpers.isTemplate('foo/bar/baz.less').should.be.false
+      done()
+    })
+
+  })
+
 })
