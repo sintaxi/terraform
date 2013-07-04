@@ -52,7 +52,7 @@ exports.root = function(root, globals){
 
       var ext = path.extname(filePath).replace(/^\./, '')
 
-      if(["jade", "md"].indexOf(ext) !== -1) {
+      if(helpers.isTemplate(filePath)) {
 
         /**
          * Current
@@ -102,7 +102,7 @@ exports.root = function(root, globals){
           callback(error, output)
         }
 
-      }else if(["less"].indexOf(ext) !== -1){
+      }else if(helpers.isStylesheet(filePath)){
         stylesheet(root, filePath, callback)
       }else{
         callback(null, null)
