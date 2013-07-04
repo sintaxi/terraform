@@ -137,4 +137,20 @@ describe("helpers", function(){
 
   })
 
+  describe('.isStylesheet(filename)', function(){
+
+    it('should return true if less file.', function(done){
+      polymer.helpers.isStylesheet('foo.less').should.be.true
+      polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
+      done()
+    })
+
+    it('should return false if jade file.', function(done){
+      polymer.helpers.isStylesheet('foo.less').should.be.true
+      polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
+      done()
+    })
+
+  })
+
 })
