@@ -3,14 +3,40 @@ var path        = require('path')
 var stylesheet  = require('./lib/stylesheet')
 var template    = require('./lib/template')
 
+
+/**
+ * If evironment is production we load the lru-helpers
+ * file instead of the helpers file so that the functions
+ * are memoized. In development we can't have memoization
+ * because the developer may have change some files.
+ *
+ */
+
 if(process.env.NODE_ENV == "production"){
   var helpers = require('./lib/lru-helpers')
 }else{
   var helpers = require('./lib/helpers')
 }
 
-// expose helpers
+
+/**
+ * Expose Helpers
+ *
+ * We expose the helpers so that other libraries my use them.
+ * Terraform is much more useful with these helpers.
+ *
+ */
+
 exports.helpers = helpers
+
+
+/**
+ * Root
+ *
+ * This sets the home base directory for the app which affects
+ * where we begin walking to build the home directory.
+ *
+ */
 
 exports.root = function(root, globals){
 
@@ -42,17 +68,25 @@ exports.root = function(root, globals){
 
     render: function(filePath, locals, callback){
 
-      // locals are optional
       if(!callback){
         callback = locals
         locals   = {}
       }
 
-      // we ignore files that start with underscore
+
+      /**
+       * We ignore files that start with underscore
+       */
+
       if(helpers.shouldIgnore(filePath)) return callback(null, null)
 
-      // if template we need to set current and other locals
+
+      /**
+       * If template file we need to set current and other locals
+       */
+
       if(helpers.isTemplate(filePath)) {
+
 
         /**
          * Current
@@ -60,8 +94,9 @@ exports.root = function(root, globals){
 
         locals.current = helpers.getCurrent(filePath)
 
+
         /**
-         * Layout If no layout is passed in we want to use the default layout.
+         * If no layout is passed in we want to use the default layout.
          *
          * Layout Priority:
          *
@@ -72,6 +107,7 @@ exports.root = function(root, globals){
          */
 
         if(!locals.hasOwnProperty('layout')){
+
 
           /**
            * default layout
@@ -91,6 +127,10 @@ exports.root = function(root, globals){
           }
 
         }
+
+        /**
+         * TODO: understand again why we are doing this.
+         */
 
         try{
           var error   = null
