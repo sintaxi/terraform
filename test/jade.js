@@ -8,9 +8,6 @@ describe("jade", function(){
 
   it("should render ejs file", function(done){
     poly.render("bio.ejs", function(error, body){
-      console.log("---")
-      console.log(error)
-      console.log(body)
       should.not.exist(error)
       should.exist(body)
       body.should.include("<h1>Hello EJS</h1>")
