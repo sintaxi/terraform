@@ -42,16 +42,16 @@ exports.root = function(root, globals){
 
     render: function(filePath, locals, callback){
 
+      // locals are optional
       if(!callback){
         callback = locals
         locals   = {}
       }
 
-      // ignore files that start with underscore
+      // we ignore files that start with underscore
       if(helpers.shouldIgnore(filePath)) return callback(null, null)
 
-      var ext = path.extname(filePath).replace(/^\./, '')
-
+      // if template we need to set current and other locals
       if(helpers.isTemplate(filePath)) {
 
         /**
