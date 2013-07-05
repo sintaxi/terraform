@@ -2,21 +2,7 @@ var fs          = require('fs')
 var path        = require('path')
 var stylesheet  = require('./lib/stylesheet')
 var template    = require('./lib/template')
-
-
-/**
- * If evironment is production we load the lru-helpers
- * file instead of the helpers file so that the functions
- * are memoized. In development we can't have memoization
- * because the developer may have change some files.
- *
- */
-
-if(process.env.NODE_ENV == "production"){
-  var helpers = require('./lib/lru-helpers')
-}else{
-  var helpers = require('./lib/helpers')
-}
+var helpers     = require('./lib/helpers')
 
 
 /**
