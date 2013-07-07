@@ -6,6 +6,15 @@ describe("jade", function(){
   var root = __dirname + "/fixtures/templates"
   var poly = polymer.root(root)
 
+  it("should render ejs file", function(done){
+    poly.render("bio.ejs", function(error, body){
+      should.not.exist(error)
+      should.exist(body)
+      body.should.include("<h1>Hello EJS</h1>")
+      done()
+    })
+  })
+
   it("should render markdown file", function(done){
     poly.render("stuff.md", function(error, body){
       should.not.exist(error)
