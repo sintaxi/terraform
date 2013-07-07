@@ -44,6 +44,7 @@ describe("jade", function(){
     poly.render("invalid.jade", function(error, body){
       should.not.exist(body)
       should.exist(error)
+      console.log(error.message)
       error.should.have.property("name")
       error.should.have.property("message")
       error.should.have.property("stack")

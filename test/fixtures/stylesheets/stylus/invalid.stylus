@@ -1,3 +1,5 @@
-body{
-  background: missingVar;
+body {
+  form input {
+    background: foo[fail];
+  }
 }
