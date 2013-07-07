@@ -8,11 +8,7 @@ describe("helpers", function(){
     it('should return all possible file names for html ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('index.html')
       list.should.be.an.instanceOf(Array)
-<<<<<<< HEAD
-      list.should.have.lengthOf(4)
-=======
       list.should.have.lengthOf(6)
->>>>>>> ejs2
       var plist = "index.jade, index.ejs, index.md, index.html.jade, index.html.ejs, index.html.md".split(', ')
       list.should.eql(plist)
       done()
@@ -29,11 +25,7 @@ describe("helpers", function(){
     it('should build priority list assuming template file when unknown.', function(done){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
-<<<<<<< HEAD
-      list.should.have.lengthOf(2)
-=======
       list.should.have.lengthOf(3)
->>>>>>> ejs2
       list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
       done()
     })
@@ -52,11 +44,7 @@ describe("helpers", function(){
     it('should look for templates when no ext present.', function(done){
       var list = polymer.helpers.buildPriorityList('appcache')
       list.should.be.an.instanceOf(Array)
-<<<<<<< HEAD
-      list.should.have.lengthOf(2)
-=======
       list.should.have.lengthOf(3)
->>>>>>> ejs2
       list.should.eql('appcache.jade, appcache.ejs, appcache.md'.split(', '))
       done()
     })
