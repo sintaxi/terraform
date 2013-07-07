@@ -73,7 +73,6 @@ exports.root = function(root, globals){
 
       if(helpers.isTemplate(filePath)) {
 
-
         /**
          * Current
          */

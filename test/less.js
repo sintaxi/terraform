@@ -10,6 +10,7 @@ describe("less", function(){
     poly.render("main.less", function(error, body){
       should.not.exist(error)
       body.should.include("body{background:pink;}")
+
       done()
     })
   })
