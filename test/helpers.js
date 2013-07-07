@@ -9,7 +9,7 @@ describe("helpers", function(){
       var list = polymer.helpers.buildPriorityList('index.html')
       list.should.be.an.instanceOf(Array)
       list.should.have.lengthOf(4)
-      var plist = "index.jade, index.md, index.html.jade, index.html.md".split(', ')
+      var plist = "index.jade, index.ejs, index.md, index.html.jade, index.html.ejs, index.html.md".split(', ')
       list.should.eql(plist)
       done()
     })
@@ -26,7 +26,7 @@ describe("helpers", function(){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
       list.should.have.lengthOf(2)
-      list.should.eql('feed.xml.jade, feed.xml.md'. split(', '))
+      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
       done()
     })
 
@@ -36,7 +36,7 @@ describe("helpers", function(){
       list.should.have.lengthOf(2)
       list.should.include('profile.json.jade')
       list.should.include('profile.json.md')
-      list.should.eql('profile.json.jade, profile.json.md'. split(', '))
+      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
       done()
     })
 
@@ -44,7 +44,7 @@ describe("helpers", function(){
       var list = polymer.helpers.buildPriorityList('appcache')
       list.should.be.an.instanceOf(Array)
       list.should.have.lengthOf(2)
-      list.should.eql('appcache.jade, appcache.md'.split(', '))
+      list.should.eql('appcache.jade, appcache.ejs, appcache.md'.split(', '))
       done()
     })
 
@@ -72,9 +72,17 @@ describe("helpers", function(){
       done()
     })
 
+    it('should convert ejs to html.', function(done){
+      polymer.helpers.outputPath('foobar.html').should.eql('foobar.html')
+      polymer.helpers.outputPath('foobar.ejs').should.eql('foobar.html')
+      polymer.helpers.outputPath('foobar.html.ejs').should.eql('foobar.html')
+      done()
+    })
+
     it('should allow alternate file extensions.', function(done){
       polymer.helpers.outputPath('foobar.foo').should.eql('foobar.foo')
       polymer.helpers.outputPath('foobar.bar.jade').should.eql('foobar.bar')
+      polymer.helpers.outputPath('foobar.bar.ejs').should.eql('foobar.bar')
       done()
     })
   })
@@ -83,6 +91,7 @@ describe("helpers", function(){
     it('should know source type.', function(done){
       polymer.helpers.outputType("foo.html").should.eql("html")
       polymer.helpers.outputType("foo.jade").should.eql("html")
+      polymer.helpers.outputType("foo.ejs").should.eql("html")
       polymer.helpers.outputType("foo.md").should.eql("html")
       polymer.helpers.outputType("foo.css").should.eql("css")
       polymer.helpers.outputType("foo.less").should.eql("css")
