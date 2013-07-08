@@ -148,7 +148,6 @@ describe("helpers", function(){
   })
 
   describe('.isStylesheet(filename)', function(){
-
     it('should return true if less file.', function(done){
       polymer.helpers.isStylesheet('foo.less').should.be.true
       polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
@@ -160,7 +159,20 @@ describe("helpers", function(){
       polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
       done()
     })
+  })
 
+  describe('.isJavaScript(filename)', function(){
+    it('should return true if coffescript file.', function(done){
+      polymer.helpers.isJavaScript('foo.coffee').should.be.true
+      polymer.helpers.isJavaScript('foo/bar/baz.coffee').should.be.true
+      done()
+    })
+
+    it('should return false if less file.', function(done){
+      polymer.helpers.isStylesheet('foo.less').should.be.true
+      polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
+      done()
+    })
   })
 
 })
