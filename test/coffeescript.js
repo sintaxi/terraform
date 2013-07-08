@@ -17,6 +17,9 @@ describe("coffeescript", function(){
     poly.render("invalid.coffee", function(errors, body){
       should.exist(errors)
       should.not.exist(body)
+      errors.should.have.property("name")
+      errors.should.have.property("message")
+      errors.should.have.property("stack")
       done()
     })
   })
