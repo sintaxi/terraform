@@ -13,4 +13,12 @@ describe("coffeescript", function(){
     })
   })
 
+  it("should return errors if invalid", function(done){
+    poly.render("invalid.coffee", function(errors, body){
+      should.exist(errors)
+      should.not.exist(body)
+      done()
+    })
+  })
+
 })

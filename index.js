@@ -2,6 +2,7 @@ var fs          = require('fs')
 var path        = require('path')
 var stylesheet  = require('./lib/stylesheet')
 var template    = require('./lib/template')
+var javascript  = require('./lib/javascript')
 var helpers     = require('./lib/helpers')
 
 
@@ -129,6 +130,8 @@ exports.root = function(root, globals){
 
       }else if(helpers.isStylesheet(filePath)){
         stylesheet(root, filePath, callback)
+      }else if(helpers.isJavaScript(filePath)){
+        javascript(root, filePath, callback)
       }else{
         callback(null, null)
       }
