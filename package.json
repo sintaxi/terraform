@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Foolproof Asset Pipeline used in the Harp APF",
   "main": "index.js",
   "scripts": {
