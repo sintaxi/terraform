@@ -2,7 +2,7 @@
   "name": "terraform",
   "version": "0.4.8",
   "description": "Foolproof Asset Pipeline used in the Harp APF",
-  "main": "index.js",
+  "main": "./lib/terraform",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
