@@ -1,7 +1,7 @@
 var should    = require('should')
 var polymer   = require('../')
 
-describe("Global Data", function(){
+describe("data", function(){
 
   var root = __dirname + "/fixtures/data"
   var poly = polymer.root(root)

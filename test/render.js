@@ -1,7 +1,7 @@
 var should    = require('should')
 var polymer   = require('../')
 
-describe("render()", function(){
+describe("render(path, callback)", function(){
 
   describe("underscore paths", function(){
     var root = __dirname + "/fixtures/render/underscores"
@@ -24,7 +24,7 @@ describe("render()", function(){
     })
   })
 
-  describe('missing paths', function(){
+  describe('invalid paths', function(){
     it("should return (null, null) if file not present.", function(done){
       polymer.root(__dirname + "/fixtures/data").render("missing.jade", function(error, body){
         should.not.exist(error)
@@ -115,6 +115,19 @@ describe("render()", function(){
       poly.render("_places/brazil.jade", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
+        done()
+      })
+    })
+  })
+
+  describe("plain", function(){
+    var root = __dirname + "/fixtures/render/plain"
+    var poly = polymer.root(root)
+
+    it("should fire callback when", function(done){
+      poly.render("index.html", function(error, body){
+        should.not.exist(body)
+        should.not.exist(error)
         done()
       })
     })
