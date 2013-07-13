@@ -8,9 +8,6 @@ describe("partial()", function(){
 
   it("should have mixes partials with locals", function(done){
     poly.render("index.jade", function(error, body){
-      // console.log("in callback")
-      // console.log("error:", error)
-      // console.log("body:", body)
       should.not.exist(error)
       should.exist(body)
       body.should.include("<h1>Hello</h1>")
