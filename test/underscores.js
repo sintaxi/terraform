@@ -3,7 +3,7 @@ var polymer   = require('../')
 
 describe("files with underscores", function(){
 
-  var root = __dirname + "/fixtures/underscores"
+  var root = __dirname + "/fixtures/render/underscores"
 
   it("should ignore file beginning with underscore", function(done){
     polymer.root(root).render("_beep.jade", function(error, body){
