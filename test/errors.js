@@ -6,11 +6,24 @@ describe("errors", function(){
   var root = __dirname + "/fixtures/errors"
   var poly = polymer.root(root)
 
+  var log = function(error){
+    console.log("\n")
+    console.log("type       :", error.title)
+    console.log("line       :", error.lineno)
+    console.log("filename   :", error.path)
+    console.log("message    :", error.message)
+    console.log("stacktrace :")
+    console.log(error.stack)
+  }
+
+
+
   describe(".less", function(){
     it("should get error if var missing in less", function(done){
       poly.render("less/novar.less", function(error, body){
         should.not.exist(body)
         should.exist(error)
+        //log(error)
         error.should.have.property('name')
         error.should.have.property('message')
         error.should.have.property('stack')
