@@ -65,5 +65,21 @@ describe("errors", function(){
     })
   })
 
+  describe(".styl", function(){
+    it("should send proper error object when missing variable.", function(done){
+      poly.render("styl/novar.styl", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
+  })
+
 
 })
