@@ -139,5 +139,20 @@ describe("errors", function(){
     })
   })
 
+  describe(".coffee", function(){
+    it("should error with invalid file", function(done){
+      poly.render("coffee/invalid.coffee", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source', "CoffeeScript")
+        error.should.have.property('dest', "JavaScript")
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
+  })
 
 })
