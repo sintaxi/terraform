@@ -62,19 +62,19 @@ describe("errors", function(){
       })
     })
 
-    // it("should get errors if syntax not correct", function(done){
-    //   poly.render("less/invalid.less", function(error, body){
-    //     should.not.exist(body)
-    //     should.exist(error)
-    //     error.should.have.property('source')
-    //     error.should.have.property('dest')
-    //     error.should.have.property('lineno')
-    //     error.should.have.property('filename')
-    //     error.should.have.property('message')
-    //     error.should.have.property('stack')
-    //     done()
-    //   })
-    // })
+    it("should get errors if syntax not correct", function(done){
+      poly.render("ejs/invalid.ejs", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
