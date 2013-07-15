@@ -123,6 +123,20 @@ describe("errors", function(){
         done()
       })
     })
+
+    it("should error with invalid file", function(done){
+      poly.render("styl/invalid.styl", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source', "Stylus")
+        error.should.have.property('dest', "CSS")
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
   })
 
 
