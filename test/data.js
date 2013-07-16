@@ -63,8 +63,8 @@ describe("data", function(){
         var poly = polymer.root(root)
       }catch(error){
         should.exist(error)
-        error.should.have.property('source', "Data")
-        error.should.have.property('dest', "Globals")
+        error.should.have.property('source', "Config")
+        error.should.have.property('dest', "Config")
         error.should.have.property('lineno')
         error.should.have.property('filename')
         error.should.have.property('message')
