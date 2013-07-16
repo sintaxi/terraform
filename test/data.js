@@ -56,4 +56,22 @@ describe("data", function(){
     })
   })
 
+  describe("missing", function(){
+    it("should return errors when missing source directory", function(done){
+      var root = __dirname + "/fixtures/data/nonexisting"
+      try{
+        var poly = polymer.root(root)
+      }catch(error){
+        should.exist(error)
+        error.should.have.property('source', "Data")
+        error.should.have.property('dest', "Globals")
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      }
+    })
+  })
+
 })
