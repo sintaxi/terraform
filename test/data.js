@@ -39,8 +39,6 @@ describe("data", function(){
   })
 
   describe("invalid", function(){
-
-
     it("should return errors when invalid _data.json file", function(done){
       var root = __dirname + "/fixtures/data/invalid"
       try{
