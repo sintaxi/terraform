@@ -105,6 +105,36 @@ describe("errors", function(){
         done()
       })
     })
+
+    it("should get template error even with valid layout", function(done){
+      poly.render("jade/invalid.jade", { layout: "jade/_layout" }, function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        //error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        error.stack.should.not.include('layout')
+        done()
+      })
+    })
+
+    it("should get layout error even with invalid layout", function(done){
+      poly.render("jade/valid.jade", { layout: "jade/_invalid_layout" }, function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        //error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        error.stack.should.include('layout')
+        done()
+      })
+    })
   })
 
 
