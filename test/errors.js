@@ -138,7 +138,6 @@ describe("errors", function(){
 
     it("should get correct partial error", function(done){
       poly.render("jade/nested_one.jade", { layout: "jade/_layout" }, function(error, body){
-        console.log(error, body)
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')
