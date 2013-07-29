@@ -191,7 +191,7 @@ describe("errors", function(){
         should.exist(error)
         error.should.have.property('source', "CoffeeScript")
         error.should.have.property('dest', "JavaScript")
-        error.should.have.property('lineno', 5)
+        error.should.have.property('lineno', 3)
         error.should.have.property('filename')
         error.should.have.property('message')
         error.should.have.property('stack')
