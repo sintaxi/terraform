@@ -135,6 +135,22 @@ describe("errors", function(){
         done()
       })
     })
+
+    it("should get correct partial error", function(done){
+      poly.render("jade/nested_one.jade", { layout: "jade/_layout" }, function(error, body){
+        console.log(error, body)
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        //error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        error.stack.should.include('three')
+        done()
+      })
+    })
   })
 
 
