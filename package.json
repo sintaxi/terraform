@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "description": "Foolproof Asset Pipeline used in the Harp",
   "main": "./lib/terraform",
   "scripts": {
