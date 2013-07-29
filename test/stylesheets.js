@@ -27,7 +27,7 @@ describe("stylesheets", function(){
       poly.render("main.styl", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("background: #ffc0cb")
+        body.should.include("background:#ffc0cb")
         done()
       })
     })
