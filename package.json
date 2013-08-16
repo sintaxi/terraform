@@ -7,6 +7,10 @@
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Brock Whitten <brock@chloi.io>",
+  "contributors": [
+    { "name": "Brock Whitten", "email": "brock@chloi.io" },
+    { "name": "Brian Donovan", "email": "donovan@squareup.com" }
+  ],
   "license": "MIT",
   "dependencies": {
     "lru-cache" : "2.3.0",
