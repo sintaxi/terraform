@@ -45,7 +45,8 @@ describe("stylesheets", function(){
       poly.render("main.sass", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("background: #ffc0cb")
+        body.should.include("background: #ffc3cd")
+        body.should.include("color: black")
         done()
       })
     })
