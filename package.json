@@ -1,7 +1,8 @@
 {
   "name": "terraform",
-  "version": "0.5.1",
-  "description": "Foolproof Asset Pipeline used in the Harp",
+  "version": "0.5.2",
+  "description": "pre-processor engine that powers the harp web server",
+  "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
   "main": "./lib/terraform",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
