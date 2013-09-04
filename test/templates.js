@@ -24,6 +24,8 @@ describe("templates", function(){
         should.exist(body)
         body.should.include("<h1>hello markdown</h1>")
         body.should.include("<p>")
+        body.should.include('<code class="language-json">')
+        body.should.not.include('<code class="lang-json">')
         done()
       })
     })
