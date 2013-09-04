@@ -58,6 +58,22 @@ describe("helpers", function(){
 
   })
 
+  describe('.findNearestLayout(root, filename)', function(){
+    it('should find closest layout', function(done){
+      var root = __dirname + "/fixtures/layouts/base"
+      polymer.helpers.findNearestLayout(root, "").should.eql("_layout.jade")
+      polymer.helpers.findNearestLayout(root, null).should.eql("_layout.jade")
+      done()
+    })
+
+    it('should find closest layout', function(done){
+      var root = __dirname + "/fixtures/layouts/deep"
+      var result = polymer.helpers.findNearestLayout(root, "nested")
+      result.should.eql("nested/_layout.jade")
+      done()
+    })
+  })
+
   describe('.outputPath(filename)', function(){
     it('should convert jade to html.', function(done){
       polymer.helpers.outputPath('foobar.html').should.eql('foobar.html')
@@ -209,6 +225,10 @@ describe("helpers", function(){
       polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
       done()
     })
+  })
+
+  describe('.layoutCascade(filename)', function(){
+
   })
 
 })
