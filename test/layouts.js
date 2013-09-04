@@ -46,7 +46,7 @@ describe("layout", function(){
       })
     })
 
-    it("should render with layout in deep", function(done){
+    it("should render with cascading layout", function(done){
       poly.render("nested/deeply/heyo.jade", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
@@ -55,6 +55,27 @@ describe("layout", function(){
         done()
       })
     })
+
+    it("should render with relative explicit layout", function(done){
+      poly.render("nested/deeply/relative.jade", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("<h1>Another Layout</h1>")
+        body.should.include("<h2>Relative</h2>")
+        done()
+      })
+    })
+
+    it("should render with relative explicit layout 2", function(done){
+      poly.render("nested/deeply/relative2.jade", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("<h1>Layout in Base</h1>")
+        body.should.include("<h2>Relative 2</h2>")
+        done()
+      })
+    })
+
   })
 
 })
