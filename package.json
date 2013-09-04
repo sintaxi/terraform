@@ -9,7 +9,8 @@
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
     { "name": "Brock Whitten", "email": "brock@chloi.io" },
-    { "name": "Brian Donovan", "email": "donovan@squareup.com" }
+    { "name": "Brian Donovan", "email": "donovan@squareup.com" },
+    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" }
   ],
   "license": "MIT",
   "dependencies": {
