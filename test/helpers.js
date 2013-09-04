@@ -68,8 +68,8 @@ describe("helpers", function(){
 
     it('should find closest layout', function(done){
       var root = __dirname + "/fixtures/layouts/deep"
-      var result = polymer.helpers.findNearestLayout(root, "nested")
-      result.should.eql("nested/_layout.jade")
+      polymer.helpers.findNearestLayout(root, "nested").should.eql("nested/_layout.jade")
+      polymer.helpers.findNearestLayout(root, "nested/deeply").should.eql("nested/_layout.jade")
       done()
     })
   })

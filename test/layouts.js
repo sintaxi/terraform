@@ -45,6 +45,16 @@ describe("layout", function(){
         done()
       })
     })
+
+    it("should render with layout in deep", function(done){
+      poly.render("nested/deeply/heyo.jade", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("<h1>Nested Layout</h1>")
+        body.should.include("<h2>Heyo</h2>")
+        done()
+      })
+    })
   })
 
 })
