@@ -4,5 +4,11 @@
   },
   "relative2":{
     "layout": "../../_layout.jade"
+  },
+  "relative3":{
+    "layout": "_layoutWithLayout.jade"
+  },
+  "_layoutWithLayout":{
+    "layout": "../../_layout.jade"
   }
 }
