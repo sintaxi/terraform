@@ -34,4 +34,39 @@ describe("stylesheets", function(){
 
   })
 
+  describe(".sass", function(){
+
+    var root = __dirname + '/fixtures/stylesheets/sass'
+    var poly = polymer.root(root)
+
+    console.log(root);
+
+    it("should have basic css file", function(done){
+      poly.render("main.sass", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("background: #ffc3cd")
+        body.should.include("color: black")
+        done()
+      })
+    })
+
+  })
+
+  // describe(".scss", function(){
+
+  //   var root = __dirname + '/fixtures/stylesheets/scss'
+  //   var poly = polymer.root(root)
+
+  //   it("should have basic css file", function(done){
+  //     poly.render("main.sass", function(error, body){
+  //       should.not.exist(error)
+  //       should.exist(body)
+  //       body.should.include("background: #ffc0cb")
+  //       done()
+  //     })
+  //   })
+
+  // })
+
 })
