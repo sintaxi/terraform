@@ -1,5 +1,6 @@
 var should    = require('should')
 var polymer   = require('../')
+var path      = require('path')
 
 describe("helpers", function(){
 
@@ -68,8 +69,8 @@ describe("helpers", function(){
 
     it('should find closest layout', function(done){
       var root = __dirname + "/fixtures/layouts/deep"
-      polymer.helpers.findNearestLayout(root, "nested").should.eql("nested/_layout.jade")
-      polymer.helpers.findNearestLayout(root, "nested/deeply").should.eql("nested/_layout.jade")
+      polymer.helpers.findNearestLayout(root, "nested").should.eql(['nested', '_layout.jade'].join(path.sep))
+      polymer.helpers.findNearestLayout(root, "nested/deeply").should.eql(['nested', '_layout.jade'].join(path.sep))
       done()
     })
   })
