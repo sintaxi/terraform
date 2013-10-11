@@ -98,7 +98,7 @@ describe("errors", function(){
         should.exist(error)
         error.should.have.property('source')
         error.should.have.property('dest')
-        error.should.have.property('lineno', -1)
+        error.should.have.property('lineno', 3)
         error.should.have.property('filename')
         error.should.have.property('message')
         error.should.have.property('stack')
