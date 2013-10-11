@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "pre-processor engine that powers the harp web server",
   "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
   "main": "./lib/terraform",
