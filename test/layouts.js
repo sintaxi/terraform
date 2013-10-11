@@ -15,6 +15,15 @@ describe("layout", function(){
         done()
       })
     })
+
+    it("should render with no layout too", function(done){
+      poly.render("false/layout-false.jade", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.eql("<h2>Layout Explicitly Set to False</h2>")
+        done()
+      })
+    })
   })
 
   describe("base", function(){
