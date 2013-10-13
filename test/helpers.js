@@ -221,6 +221,12 @@ describe("helpers", function(){
       done()
     })
 
+    it('should return true if traceur script file.', function(done){
+      polymer.helpers.isJavaScript('foo.traceur').should.be.true
+      polymer.helpers.isJavaScript('foo/bar/baz.traceur').should.be.true
+      done()
+    })
+
     it('should return false if less file.', function(done){
       polymer.helpers.isStylesheet('foo.less').should.be.true
       polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true

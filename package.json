@@ -11,13 +11,15 @@
   "contributors": [
     { "name": "Brock Whitten", "email": "brock@chloi.io" },
     { "name": "Brian Donovan", "email": "donovan@squareup.com" },
-    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" }
+    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
+    { "name": "@torgeir", "email": "torgeir.thoresen@gmail.com" }
   ],
   "license": "MIT",
   "dependencies": {
     "lru-cache" : "2.3.0",
     "jade" : "0.35.0",
     "coffee-script" : "1.6.3",
+    "es6ify" : "0.4.3",
     "ejs" : "0.8.4",
     "marked": "0.2.9",
     "less" : "1.4.2",
