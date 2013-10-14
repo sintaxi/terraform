@@ -53,3 +53,6 @@ Please run the tests
     npm install
     npm test
 
+
+## License
+Licensed under the [MIT license](http://opensource.org/licenses/MIT).
