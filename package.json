@@ -22,7 +22,7 @@
     "ejs" : "0.8.4",
     "marked": "0.2.9",
     "less" : "1.5.0",
-    "stylus": "0.38.0"
+    "stylus": "0.40.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
