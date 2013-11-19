@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "pre-processor engine that powers the harp web server",
   "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
   "main": "./lib/terraform",
@@ -21,7 +21,7 @@
     "coffee-script" : "1.6.3",
     "ejs" : "0.8.4",
     "marked": "0.2.9",
-    "less" : "1.5.0",
+    "less" : "1.5.1",
     "stylus": "0.40.0"
   },
   "devDependencies": {
