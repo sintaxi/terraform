@@ -1,0 +1,8 @@
+{
+  "relative":{
+    "layout": "layouts/_anotherLayout.jade"
+  },
+  "relative2":{
+    "layout": "../../_layout.jade"
+  }
+}

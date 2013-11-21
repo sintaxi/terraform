@@ -2,5 +2,5 @@ h2 Home
 
 h3 Articles
 
-for article, slug in public.articles.data
+for article, slug in public.articles._data
   != partial('articles/' + slug + '.jade', { author: "Kool Keith" })

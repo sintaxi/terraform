@@ -1,5 +1,6 @@
 var should    = require('should')
 var polymer   = require('../')
+var path      = require('path')
 
 describe("helpers", function(){
 
@@ -56,6 +57,22 @@ describe("helpers", function(){
       done()
     })
 
+  })
+
+  describe('.findNearestLayout(root, filename)', function(){
+    it('should find closest layout', function(done){
+      var root = __dirname + "/fixtures/layouts/base"
+      polymer.helpers.findNearestLayout(root, "").should.eql("_layout.jade")
+      polymer.helpers.findNearestLayout(root, null).should.eql("_layout.jade")
+      done()
+    })
+
+    it('should find closest layout', function(done){
+      var root = __dirname + "/fixtures/layouts/deep"
+      polymer.helpers.findNearestLayout(root, "nested").should.eql(['nested', '_layout.jade'].join(path.sep))
+      polymer.helpers.findNearestLayout(root, "nested/deeply").should.eql(['nested', '_layout.jade'].join(path.sep))
+      done()
+    })
   })
 
   describe('.outputPath(filename)', function(){
@@ -209,6 +226,10 @@ describe("helpers", function(){
       polymer.helpers.isStylesheet('foo/bar/baz.less').should.be.true
       done()
     })
+  })
+
+  describe('.layoutCascade(filename)', function(){
+
   })
 
 })

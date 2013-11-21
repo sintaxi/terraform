@@ -1,26 +1,29 @@
 {
   "name": "terraform",
-  "version": "0.5.0",
-  "description": "Foolproof Asset Pipeline used in the Harp",
+  "version": "0.6.1",
+  "description": "pre-processor engine that powers the harp web server",
+  "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
   "main": "./lib/terraform",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
     { "name": "Brock Whitten", "email": "brock@chloi.io" },
-    { "name": "Brian Donovan", "email": "donovan@squareup.com" }
+    { "name": "Brian Donovan", "email": "donovan@squareup.com" },
+    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
+    { "name": "Zhang Yichao", "email": "echaozh@gmail.com" }
   ],
   "license": "MIT",
   "dependencies": {
     "lru-cache" : "2.3.0",
-    "jade" : "0.28.2",
+    "jade" : "0.35.0",
     "coffee-script" : "1.6.3",
     "ejs" : "0.8.4",
-    "marked": "0.2.8",
-    "less" : "1.3.3",
-    "stylus": "0.33.1",
-    "node-sass": "0.7.0"
+    "node-sass": "0.7.0",
+    "marked": "0.2.9",
+    "less" : "1.5.1",
+    "stylus": "0.40.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",

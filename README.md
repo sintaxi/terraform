@@ -1,6 +1,6 @@
  # terraform
 
-> Terraform is the pre-processor engine for the Harp Web Server. Terraform does not write or serve files. Ony processes.
+> Terraform is the pre-processor engine for the Harp Web Server. Terraform does not write or serve files. It processes and provides a layout/partial paradgm.
 
 ## Features
 
@@ -15,8 +15,6 @@
 **HTML** - EJS, Jade, Markdown
 **CSS** - LESS, Stylus
 **JavaScript** - CoffeeScript
-
-![](https://s3-us-west-2.amazonaws.com/harp-misc/terraform.jpg)
 
 ## Install
 
@@ -43,13 +41,15 @@ var planet = root("path/to/public/dir", { "title": "Bitchin" })
 Step 3) render a file
 
 ```javascript
-planet.render('index.jade', function(error, body){
+planet.render('index.jade', { "title": "Override the global title" }, function(error, body){
   console.log(body)
 })
 ```
 
 ## Tests
 
+Please run the tests
+
+    npm install
     npm test
 
-![](https://s3-us-west-2.amazonaws.com/harp-misc/terraform-tests.png)
