@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.5.5",
+  "version": "0.6.1",
   "description": "pre-processor engine that powers the harp web server",
   "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
   "main": "./lib/terraform",
@@ -11,7 +11,8 @@
   "contributors": [
     { "name": "Brock Whitten", "email": "brock@chloi.io" },
     { "name": "Brian Donovan", "email": "donovan@squareup.com" },
-    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" }
+    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
+    { "name": "Zhang Yichao", "email": "echaozh@gmail.com" }
   ],
   "license": "MIT",
   "dependencies": {
@@ -19,9 +20,10 @@
     "jade" : "0.35.0",
     "coffee-script" : "1.6.3",
     "ejs" : "0.8.4",
+    "node-sass": "0.7.0",
     "marked": "0.2.9",
-    "less" : "1.4.2",
-    "stylus": "0.38.0"
+    "less" : "1.5.1",
+    "stylus": "0.40.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
