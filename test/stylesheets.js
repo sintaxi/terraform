@@ -34,4 +34,23 @@ describe("stylesheets", function(){
 
   })
 
+  describe(".scss", function(){
+
+    var root = __dirname + '/fixtures/stylesheets/scss'
+    var poly = polymer.root(root)
+
+    console.log(root);
+
+    it("should have basic css file", function(done){
+      poly.render("main.scss", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("background:#ffc3cd")
+        body.should.include("color:#000000")
+        done()
+      })
+    })
+
+  })
+
 })
