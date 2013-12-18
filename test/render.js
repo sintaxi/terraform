@@ -171,6 +171,39 @@ describe("render(path, callback)", function(){
       })
     })
 
+    it("should render special characters in less", function(done){
+      var root = __dirname + "/fixtures/render/internationalization"
+      var poly = polymer.root(root)
+      poly.render("less.less", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("body{background:#FF00AA}")
+        done()
+      })
+    })
+
+    it("should render special characters in scss", function(done){
+      var root = __dirname + "/fixtures/render/internationalization"
+      var poly = polymer.root(root)
+      poly.render("scss.scss", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("body {background:#ff00aa;}")
+        done()
+      })
+    })
+
+    it("should render special characters in stylus", function(done){
+      var root = __dirname + "/fixtures/render/internationalization"
+      var poly = polymer.root(root)
+      poly.render("styl.styl", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("body{background:#f0a}")
+        done()
+      })
+    })
+
   })
 
 })
