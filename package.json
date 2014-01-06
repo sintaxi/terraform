@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache" : "2.3.0",
-    "jade" : "0.35.0",
+    "jade" : "1.0.2",
     "coffee-script" : "1.6.3",
     "ejs" : "0.8.4",
     "node-sass": "0.7.0",
