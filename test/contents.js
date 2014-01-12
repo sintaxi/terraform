@@ -9,7 +9,6 @@ describe("contents", function(){
       var poly = polymer.root(root)
       poly.render("pub.json.jade", { "layout": false }, function(err, result){
         var pub = JSON.parse(result)
-        console.log(pub)
         should.exist(pub["_contents"])
         done()
       })
