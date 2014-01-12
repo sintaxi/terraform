@@ -21,7 +21,7 @@
     "coffee-script" : "1.6.3",
     "ejs" : "0.8.5",
     "marked": "0.2.9",
-    "less" : "1.5.1",
+    "less" : "1.6.1",
     "stylus": "0.41.3"
   },
   "devDependencies": {
