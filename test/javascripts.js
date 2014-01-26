@@ -25,6 +25,15 @@ describe("javascripts", function(){
       })
     })
 
+    it("should not browserify scripts that don't contain 'require' statements", function(done){
+      poly.render("main.coffee", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.not.match(/typeof require=="function"/);
+        done()
+      })
+    })
+
     it("should return errors if invalid", function(done){
       poly.render("invalid.coffee", function(errors, body){
         should.exist(errors)
