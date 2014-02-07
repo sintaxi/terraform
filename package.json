@@ -22,7 +22,7 @@
     "ejs" : "0.8.5",
     "node-sass": "0.8.1",
     "marked": "0.2.9",
-    "less" : "1.6.1",
+    "less" : "1.6.2",
     "stylus": "0.42.2"
   },
   "devDependencies": {
