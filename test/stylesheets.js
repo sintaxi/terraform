@@ -46,7 +46,7 @@ describe("stylesheets", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("background:#ffc3cd")
-        body.should.include("color:#000000")
+        body.should.include("color:#000")
         done()
       })
     })
