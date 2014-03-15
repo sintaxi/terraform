@@ -2,7 +2,10 @@
   "name": "terraform",
   "version": "0.6.2",
   "description": "pre-processor engine that powers the harp web server",
-  "repository" : { "type" : "git", "url" : "https://github.com/sintaxi/terraform.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sintaxi/terraform.git"
+  },
   "main": "./lib/terraform",
   "scripts": {
     "test": "mocha --reporter spec"
@@ -17,14 +20,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache" : "2.3.0",
-    "jade" : "0.35.0",
-    "coffee-script" : "1.6.3",
-    "ejs" : "0.8.4",
-    "node-sass": "0.7.0",
+    "lru-cache": "2.3.0",
+    "jade": "0.35.0",
+    "coffee-script": "1.7.1",
+    "ejs": "0.8.5",
+    "node-sass": "0.8.3",
     "marked": "0.2.9",
-    "less" : "1.5.1",
-    "stylus": "0.40.0"
+    "less": "1.7.0",
+    "stylus": "0.42.3"
   },
   "devDependencies": {
     "mocha": "1.8.2",
