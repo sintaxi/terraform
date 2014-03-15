@@ -29,6 +29,15 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should render markdown file encoded in UTF-8 with BOM", function(done){
+      poly.render("bom.md", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>file with bom marker</h1>")
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
