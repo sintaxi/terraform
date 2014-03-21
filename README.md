@@ -1,6 +1,6 @@
- # terraform
+# terraform
 
-> Terraform is the pre-processor engine for the Harp Web Server. Terraform does not write or serve files. It processes and provides a layout/partial paradgm.
+> Terraform is the pre-processor engine for the [Harp](https://github.com/sintaxi/harp) web server. Terraform does not write or serve files. It processes and provides a layout/partial paradgm.
 
 ## Features
 
@@ -13,7 +13,7 @@
 ### Supported Pre-Processors
 
 **HTML** - EJS, Jade, Markdown
-**CSS** - LESS, Stylus
+**CSS** - LESS, Stylus, Sass (SCSS)
 **JavaScript** - CoffeeScript
 
 ## Install
@@ -35,7 +35,7 @@ Step 2) set the root
 - globals (Object): global variables to be available to every template
 
 ```javascript
-var planet = root("path/to/public/dir", { "title": "Bitchin" })
+var planet = terraform.root("path/to/public/dir", { "title": "Bitchin" })
 ```
 
 Step 3) render a file
