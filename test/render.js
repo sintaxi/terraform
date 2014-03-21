@@ -188,7 +188,7 @@ describe("render(path, callback)", function(){
       poly.render("scss.scss", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
-        body.should.include("body {background:#ff00aa;}")
+        body.should.include("body{background:#FF00AA;}")
         done()
       })
     })
