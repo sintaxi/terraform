@@ -23,7 +23,7 @@
     "lru-cache": "2.3.0",
     "jade": "0.35.0",
     "coffee-script": "1.7.1",
-    "ejs": "0.8.6",
+    "ejs": "1.0.0",
     "node-sass": "0.8.3",
     "marked": "0.2.9",
     "less": "1.7.0",
