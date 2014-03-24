@@ -79,4 +79,39 @@ describe("templates", function(){
 
   })
 
+  describe(".hbs", function(){
+    it("should render handlebars file", function(done){
+      poly.render("hbs/index.hbs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Hello Handlebars</h1>")
+        done()
+      })
+    })
+
+    it("should pass in partials from the global object", function(done){
+      poly.render("hbs/partials.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Sintaxi</h1>")
+        body.should.include("<h2>Hello World</h2>")
+        body.should.include("<h3>Brock Whitten</h3>")
+        body.should.include("<h4>Vancouver</h4>")
+        done()
+      })
+    })
+
+    it("should return errors if error found", function(done){
+      poly.render("hbs/invalid.hbs", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property("name")
+        error.should.have.property("message")
+        error.should.have.property("stack")
+        done()
+      })
+    })
+
+  })
+
 })
