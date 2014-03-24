@@ -16,7 +16,8 @@
     { "name": "Brian Donovan", "email": "donovan@squareup.com" },
     { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
     { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
-    { "name": "Carlos Rodriguez" }
+    { "name": "Carlos Rodriguez" },
+    { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" }
   ],
   "license": "MIT",
   "dependencies": {
