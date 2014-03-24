@@ -124,10 +124,16 @@ describe("templates", function(){
       poly.render("extend.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Sintaxi</h1>")
-        body.should.include("<h2>Hello World</h2>")
+        body.should.include("<h1>hello markdown</h1>")
+        done()
+      })
+    })
+
+    it("should pass data into partials", function(done){
+      poly.render("hbs/partials-with-data.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
         body.should.include("<h3>Brock Whitten</h3>")
-        body.should.include("<h4>Vancouver</h4>")
         done()
       })
     })
