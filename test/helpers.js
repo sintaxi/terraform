@@ -115,6 +115,8 @@ describe("helpers", function(){
       polymer.helpers.outputPath('foobar-1.0.0.html').should.eql('foobar-1.0.0.html')
       polymer.helpers.outputPath('foobar-1.0.0.jade').should.eql('foobar-1.0.0.html')
       polymer.helpers.outputPath('foobar-1.0.0.html.jade').should.eql('foobar-1.0.0.html')
+      polymer.helpers.outputPath('foobar.min.js').should.eql('foobar.min.js')
+      polymer.helpers.outputPath('foobar.min.js.coffee').should.eql('foobar.min.js')
       done()
     })
 
@@ -124,6 +126,7 @@ describe("helpers", function(){
       polymer.helpers.outputPath('1.0.0/foobar.html.jade').should.eql('1.0.0/foobar.html')
       done()
     })
+
   })
 
   describe('.outputType(filename)', function(){
