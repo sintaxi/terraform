@@ -17,7 +17,8 @@
     { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
     { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
     { "name": "Carlos Rodriguez" },
-    { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" }
+    { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
+    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" }
   ],
   "license": "MIT",
   "dependencies": {
