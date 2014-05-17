@@ -9,8 +9,8 @@ describe("helpers", function(){
     it('should return all possible file names for html ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('index.html')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(6)
-      var plist = "index.jade, index.ejs, index.md, index.html.jade, index.html.ejs, index.html.md".split(', ')
+      list.should.have.lengthOf(8)
+      var plist = "index.jade, index.ejs, index.md, index.adoc, index.html.jade, index.html.ejs, index.html.md, index.html.adoc".split(', ')
       list.should.eql(plist)
       done()
     })
@@ -26,27 +26,28 @@ describe("helpers", function(){
     it('should build priority list assuming template file when unknown.', function(done){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md, feed.xml.adoc'. split(', '))
       done()
     })
 
     it('should look for templates on json files.', function(done){
       var list = polymer.helpers.buildPriorityList('profile.json')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
+      list.should.have.lengthOf(4)
       list.should.include('profile.json.jade')
       list.should.include('profile.json.ejs')
       list.should.include('profile.json.md')
-      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
+      list.should.include('profile.json.adoc')
+      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md, profile.json.adoc'. split(', '))
       done()
     })
 
     it('should look for templates when no ext present.', function(done){
       var list = polymer.helpers.buildPriorityList('appcache')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('appcache.jade, appcache.ejs, appcache.md'.split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('appcache.jade, appcache.ejs, appcache.md, appcache.adoc'.split(', '))
       done()
     })
 
@@ -213,6 +214,12 @@ describe("helpers", function(){
     it('should return true if markdown file.', function(done){
       polymer.helpers.isTemplate(path.join('foo.md')).should.be.true
       polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.md')).should.be.true
+      done()
+    })
+
+    it('should return true if asciidoc file.', function(done){
+      polymer.helpers.isTemplate(path.join('foo.adoc')).should.be.true
+      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.adoc')).should.be.true
       done()
     })
 
