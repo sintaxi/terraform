@@ -29,7 +29,8 @@
     "node-sass": "0.8.4",
     "marked": "0.2.9",
     "less": "1.7.0",
-    "stylus": "0.42.3"
+    "stylus": "0.42.3",
+    "asciidoctorjs-npm-wrapper" : "0.1.1"
   },
   "devDependencies": {
     "mocha": "1.8.2",

@@ -79,4 +79,17 @@ describe("templates", function(){
 
   })
 
+  describe(".adoc", function(){
+    it("should render asciidoc file", function(done){
+      poly.render("asciidoc.adoc", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h2 id=\"_my_title\">My title</h2>")
+        body.should.include("<p>")
+        body.should.include('<code class="js language-js">')
+        done()
+      })
+    })
+  })
+
 })
