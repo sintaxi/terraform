@@ -85,6 +85,17 @@ describe("layout", function(){
       })
     })
 
+    it("should render with explicit layout 3 and then layout 4", function(done){
+      poly.render("nested/deeply/relative3.jade", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("<h1>Layout in Base</h1>")
+        body.should.include("<h2>Layout with Its Own Layout</h2>")
+        body.should.include("<h3>Relative 3</h3>")
+        done()
+      })
+    })
+
   })
 
 })
