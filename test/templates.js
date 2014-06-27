@@ -77,6 +77,16 @@ describe("templates", function(){
       })
     })
 
+    it("should inline preprocessed files", function(done){
+      poly.render("inline.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("body{background:cornflowerblue}")
+        body.should.include("alert(\"Hi\")")
+        done()
+      })
+    })
+
   })
 
 })
