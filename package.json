@@ -12,13 +12,33 @@
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
-    { "name": "Brock Whitten", "email": "brock@chloi.io" },
-    { "name": "Brian Donovan", "email": "donovan@squareup.com" },
-    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
-    { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
-    { "name": "Carlos Rodriguez" },
-    { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
-    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" }
+    {
+      "name": "Brock Whitten",
+      "email": "brock@chloi.io"
+    },
+    {
+      "name": "Brian Donovan",
+      "email": "donovan@squareup.com"
+    },
+    {
+      "name": "Kenneth Ormandy",
+      "email": "kenneth@chloi.io"
+    },
+    {
+      "name": "Zhang Yichao",
+      "email": "echaozh@gmail.com"
+    },
+    {
+      "name": "Carlos Rodriguez"
+    },
+    {
+      "name": "Zeke Sikelianos",
+      "email": "zeke@sikelianos.com"
+    },
+    {
+      "name": "Guilherme Rodrigues",
+      "email": "gadr90@gmail.com"
+    }
   ],
   "license": "MIT",
   "dependencies": {
@@ -26,13 +46,14 @@
     "jade": "0.35.0",
     "coffee-script": "1.7.1",
     "ejs": "1.0.0",
-    "node-sass": "0.8.4",
+    "node-sass": "<1.0.0",
     "marked": "0.2.9",
     "less": "1.7.0",
     "stylus": "0.42.3"
   },
   "devDependencies": {
     "mocha": "1.8.2",
-    "should": "1.2.2"
+    "should": "1.2.2",
+    "node-sass": "~0.9.3"
   }
 }
