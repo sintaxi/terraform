@@ -18,8 +18,8 @@ describe("helpers", function(){
     it('should build priority list for css file.', function(done){
       var list = polymer.helpers.buildPriorityList('main.css')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(6)
-      list.should.eql("main.styl, main.less, main.scss, main.css.styl, main.css.less, main.css.scss".split(', '))
+      list.should.have.lengthOf(8)
+      list.should.eql("main.styl, main.less, main.scss, main.sass, main.css.styl, main.css.less, main.css.scss, main.css.sass".split(', '))
       done()
     })
 
