@@ -22,14 +22,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache": "2.3.0",
+    "lru-cache": "2.5.0",
     "jade": "0.35.0",
     "coffee-script": "1.7.1",
     "ejs": "1.0.0",
     "node-sass": "0.9.3",
     "marked": "0.2.9",
-    "less": "1.7.0",
-    "stylus": "0.42.3"
+    "less": "1.7.3",
+    "stylus": "0.47.1"
   },
   "devDependencies": {
     "mocha": "1.8.2",
