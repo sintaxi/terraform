@@ -18,7 +18,8 @@
     { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
     { "name": "Carlos Rodriguez" },
     { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
-    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" }
+    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" },
+    { "name": "Radu Brehar", "email": "radu@jslog.com" }
   ],
   "license": "MIT",
   "dependencies": {
