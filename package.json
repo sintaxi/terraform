@@ -29,7 +29,8 @@
     "node-sass": "0.9.3",
     "marked": "0.2.9",
     "less": "1.7.3",
-    "stylus": "0.47.1"
+    "stylus": "0.47.1",
+    "autoprefixer": "~2.2.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
