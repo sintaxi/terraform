@@ -28,8 +28,8 @@
     "ejs": "1.0.0",
     "node-sass": "0.9.3",
     "marked": "0.2.9",
-    "less": "1.7.3",
-    "stylus": "0.47.1",
+    "less": "1.7.4",
+    "stylus": "0.47.3",
     "autoprefixer": "~2.2.0"
   },
   "devDependencies": {
