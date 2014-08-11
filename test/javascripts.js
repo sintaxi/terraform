@@ -11,6 +11,8 @@ describe("javascripts", function(){
       poly.render("main.coffee", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
+        console.log(body);
+        body.should.not.include("\n\n")
         done()
       })
     })
