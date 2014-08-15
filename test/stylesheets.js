@@ -12,9 +12,12 @@ describe("stylesheets", function(){
       poly.render("main.less", function(error, body){
         should.not.exist(error)
         body.should.include("background:#ffc0cb")
+        body.should.include("-webkit-font-feature-settings")
         done()
       })
     })
+
+
 
   })
 
@@ -28,6 +31,7 @@ describe("stylesheets", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("background:#ffc0cb")
+        body.should.include("-webkit-font-feature-settings")
         done()
       })
     })
@@ -47,6 +51,7 @@ describe("stylesheets", function(){
         should.exist(body)
         body.should.include("background:#ffc3cd")
         body.should.include("color:#000")
+        body.should.include("-webkit-font-feature-settings")
         done()
       })
     })
@@ -66,6 +71,7 @@ describe("stylesheets", function(){
         should.exist(body)
         body.should.include("background:#ffc3cd")
         body.should.include("color:#000")
+        body.should.include("-webkit-font-feature-settings")
         done()
       })
     })
