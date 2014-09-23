@@ -31,7 +31,7 @@
     "less": "1.7.4",
     "stylus": "0.47.3",
     "autoprefixer": "~2.2.0",
-    "minify": "git://github.com/ianstormtaylor/minify#0.1.1"
+    "minify": "git://github.com/kennethormandy/minify#v0.2.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
