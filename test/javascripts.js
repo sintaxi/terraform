@@ -21,6 +21,13 @@ describe("javascripts", function(){
         done()
       })
     })
+    it("shouldn’t strip unused javascript when minifying", function(done){
+      poly.render("unused.coffee", function(errors, body){
+        should.not.exist(errors)
+        body.should.include("alert")
+        done()
+      })
+    })
 
     it("should return errors if invalid", function(done){
       poly.render("invalid.coffee", function(errors, body){
