@@ -25,6 +25,16 @@ describe("templates", function(){
     })
   })
 
+  describe(".hbs", function(){
+    it("should render handlebars file", function(done){
+      poly.render("content.hbs", function(error, body){
+        should.exist(body)
+        body.should.include("<h1>Hello! This is Handlebars!</h1>")
+        done()
+      })
+    })
+  })
+
   describe(".md", function(){
     it("should render markdown file", function(done){
       poly.render("stuff.md", function(error, body){
