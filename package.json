@@ -31,8 +31,8 @@
     "marked": "0.3.2",
     "less": "1.7.5",
     "stylus": "0.47.3",
-    "minify": "git://github.com/kennethormandy/minify#v0.2.0"
-    "autoprefixer": "3.1.0",
+    "minify": "git://github.com/kennethormandy/minify#v0.2.0",
+    "autoprefixer": "3.1.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
