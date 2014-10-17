@@ -12,7 +12,21 @@ describe("stylesheets", function(){
       poly.render("main.less", function(error, body){
         should.not.exist(error)
         body.should.include("background:#ffc0cb")
+        done()
+      })
+    })
+    it("should autoprefix css", function(done){
+      poly.render("main.less", function(error, body){
+        should.not.exist(error)
         body.should.include("-webkit-font-feature-settings")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("main.less", function(error, body){
+        should.not.exist(error)
+        body.should.not.include(";}")
         done()
       })
     })
@@ -31,7 +45,22 @@ describe("stylesheets", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("background:#ffc0cb")
+        done()
+      })
+    })
+
+    it("should autoprefix css", function(done){
+      poly.render("main.styl", function(error, body){
+        should.not.exist(error)
         body.should.include("-webkit-font-feature-settings")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("main.styl", function(error, body){
+        should.not.exist(error)
+        body.should.not.include(";}")
         done()
       })
     })
@@ -51,7 +80,20 @@ describe("stylesheets", function(){
         should.exist(body)
         body.should.include("background:#ffc3cd")
         body.should.include("color:#000")
+        done()
+      })
+    })
+    it("should autoprefix css", function(done){
+      poly.render("main.scss", function(error, body){
+        should.not.exist(error)
         body.should.include("-webkit-font-feature-settings")
+        done()
+      })
+    })
+    it("should minify beyond preprocessor", function(done){
+      poly.render("main.scss", function(error, body){
+        should.not.exist(error)
+        body.should.not.include(";}")
         done()
       })
     })
@@ -71,7 +113,20 @@ describe("stylesheets", function(){
         should.exist(body)
         body.should.include("background:#ffc3cd")
         body.should.include("color:#000")
+        done()
+      })
+    })
+    it("should autoprefix css", function(done){
+      poly.render("main.sass", function(error, body){
+        should.not.exist(error)
         body.should.include("-webkit-font-feature-settings")
+        done()
+      })
+    })
+    it("should minify beyond preprocessor", function(done){
+      poly.render("main.sass", function(error, body){
+        should.not.exist(error)
+        body.should.not.include(";}")
         done()
       })
     })
