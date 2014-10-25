@@ -30,7 +30,7 @@
     "marked": "0.2.9",
     "less": "1.7.4",
     "stylus": "0.47.3",
-    "autoprefixer": "~2.2.0"
+    "autoprefixer": "~3.1.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
