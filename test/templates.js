@@ -6,6 +6,17 @@ describe("templates", function(){
   var root = __dirname + "/fixtures/templates"
   var poly = polymer.root(root)
 
+  describe(".nunjucks", function(){
+    it("should render nunjucks file", function(done){
+      poly.render("nunjucks-sample.nunjucks", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("Hello Nunjucks!")
+        done()
+      })
+    })
+  })
+
   describe(".ejs", function(){
     it("should render ejs file", function(done){
       poly.render("bio.ejs", function(error, body){
