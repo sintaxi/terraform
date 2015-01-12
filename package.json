@@ -18,19 +18,21 @@
     { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
     { "name": "Carlos Rodriguez" },
     { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
-    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" }
+    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" },
+    { "name": "Melchior Brislinger", "email": "mail@melchiorbrislinger.de" }
   ],
   "license": "MIT",
   "dependencies": {
     "lru-cache": "2.5.0",
     "jade": "0.35.0",
-    "coffee-script": "1.7.1",
     "ejs": "1.0.0",
     "node-sass": "0.9.3",
     "marked": "0.2.9",
     "less": "1.7.4",
     "stylus": "0.47.3",
-    "autoprefixer": "~2.2.0"
+    "autoprefixer": "~2.2.0",
+    "coffee-script": "1.8.0",
+    "coffee-react": "2.1.2"
   },
   "devDependencies": {
     "mocha": "1.8.2",
