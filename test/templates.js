@@ -77,6 +77,18 @@ describe("templates", function(){
       })
     })
 
+    it("should extend from a file with absolute path", function(done){
+      poly.render("extend.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Sintaxi</h1>")
+        body.should.include("<h2>Hello World</h2>")
+        body.should.include("<h3>Brock Whitten</h3>")
+        body.should.include("<h4>Vancouver</h4>")
+        done()
+      })
+    })
+
   })
 
 })
