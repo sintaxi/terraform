@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -18,20 +18,21 @@
     { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
     { "name": "Carlos Rodriguez" },
     { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
-    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" }
+    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" },
+    { "name": "Glen Maddern", "email": "glenmaddern@gmail.com" }
   ],
   "license": "MIT",
   "dependencies": {
     "lru-cache": "2.5.0",
     "jade": "0.35.0",
-    "coffee-script": "1.7.1",
+    "coffee-script": "1.8.0",
     "ejs": "1.0.0",
     "node-sass": "^2.0.0-beta",
-    "marked": "0.2.9",
-    "less": "1.7.4",
+    "marked": "0.3.2",
+    "less": "1.7.5",
     "stylus": "0.47.3",
-    "autoprefixer": "~2.2.0",
-    "minify": "git://github.com/ianstormtaylor/minify#0.2.0"
+    "minify": "git://github.com/ianstormtaylor/minify#0.2.0",
+    "autoprefixer": "3.1.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
