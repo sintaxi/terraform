@@ -33,7 +33,7 @@
     "less": "^1.7.5",
     "stylus": "0.47.3",
     "minify": "git://github.com/ianstormtaylor/minify#0.2.0",
-    "autoprefixer": "3.1.0"
+    "autoprefixer": "5.1.0"
   },
   "devDependencies": {
     "mocha": "1.8.2",
