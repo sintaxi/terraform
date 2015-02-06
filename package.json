@@ -29,8 +29,8 @@
     "coffee-script": "^1.9.0",
     "ejs": "^1.0.0",
     "node-sass": "^2.0.0-beta",
-    "marked": "0.3.2",
     "less": "1.7.5",
+    "marked": "^0.3.3",
     "stylus": "0.47.3",
     "minify": "git://github.com/ianstormtaylor/minify#0.2.0",
     "autoprefixer": "3.1.0"
