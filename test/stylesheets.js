@@ -45,6 +45,7 @@ describe("stylesheets", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("background:#ffc0cb")
+        body.should.include("font-feature-settings")
         done()
       })
     })

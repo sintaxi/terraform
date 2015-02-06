@@ -19,6 +19,7 @@
     { "name": "Carlos Rodriguez" },
     { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
     { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" },
+    { "name": "Radu Brehar", "email": "radu@jslog.com" },
     { "name": "Glen Maddern", "email": "glenmaddern@gmail.com" }
   ],
   "license": "MIT",
