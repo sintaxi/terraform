@@ -15,6 +15,14 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("bio.ejs", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
+        done()
+      })
+    })
   })
 
   describe(".md", function(){
@@ -26,6 +34,14 @@ describe("templates", function(){
         body.should.include("<p>")
         body.should.include('<code class="language-json">')
         body.should.not.include('<code class="lang-json">')
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("stuff.md", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
         done()
       })
     })
@@ -50,6 +66,14 @@ describe("templates", function(){
         body.should.include("<h2>Hello World</h2>")
         body.should.include("<h3>Brock Whitten</h3>")
         body.should.include("<h4>Vancouver</h4>")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("index.jade", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
         done()
       })
     })
