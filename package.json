@@ -35,7 +35,7 @@
     "marked": "^0.3.3",
     "less": "^1.7.5",
     "stylus": "0.47.3",
-    "minify": "git://github.com/ianstormtaylor/minify#0.2.0",
+    "minify": "git://github.com/kennethormandy/minify#v0.3.0",
     "autoprefixer": "5.1.0"
   },
   "devDependencies": {
