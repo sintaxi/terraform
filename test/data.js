@@ -27,6 +27,16 @@ describe("data", function(){
       })
     })
 
+    it("should handle escaped html", function(done){
+      poly.render("articles/hello-pluto.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1><a href=\"http://harpjs.com\">Harp</a></h1>")
+        done()
+      })
+    })
+
+
     it("should be available to override data when calling partial", function(done){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)

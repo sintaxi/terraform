@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -31,11 +31,11 @@
     "jade": "0.35.0",
     "coffee-script": "^1.9.0",
     "ejs": "^1.0.0",
-    "node-sass": "^2.0.0-beta",
+    "node-sass": "^1.2.3",
     "marked": "^0.3.3",
     "less": "^1.7.5",
     "stylus": "0.47.3",
-    "minify": "git://github.com/ianstormtaylor/minify#0.2.0",
+    "minify": "git://github.com/kennethormandy/minify#v0.3.0",
     "autoprefixer": "5.1.0"
   },
   "devDependencies": {
