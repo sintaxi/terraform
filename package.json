@@ -28,18 +28,18 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "2.5.0",
-    "jade": "0.35.0",
+    "jade": "1.9.2",
     "coffee-script": "^1.9.0",
-    "ejs": "^1.0.0",
-    "node-sass": "^1.2.3",
+    "ejs": "^2.2.4",
+    "node-sass": "^2.0.0-beta",
     "marked": "^0.3.3",
-    "less": "^1.7.5",
-    "stylus": "0.47.3",
-    "minify": "git://github.com/kennethormandy/minify#v0.3.0",
+    "less": "^2.4.0",
+    "stylus": "0.50.0",
+    "minify": "git://github.com/kennethormandy/minify#v1.4.8",
     "autoprefixer": "5.1.0"
   },
   "devDependencies": {
-    "mocha": "1.8.2",
-    "should": "1.2.2"
+    "mocha": "2.1.0",
+    "should": "4.6.5"
   }
 }
