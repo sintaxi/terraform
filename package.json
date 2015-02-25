@@ -12,31 +12,67 @@
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
-    { "name": "Brock Whitten", "email": "brock@chloi.io" },
-    { "name": "Brian Donovan", "email": "donovan@squareup.com" },
-    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
-    { "name": "Zhang Yichao", "email": "echaozh@gmail.com" },
-    { "name": "Carlos Rodriguez" },
-    { "name": "Zeke Sikelianos", "email": "zeke@sikelianos.com" },
-    { "name": "Guilherme Rodrigues", "email": "gadr90@gmail.com" },
-    { "name": "Radu Brehar", "email": "radu@jslog.com" },
-    { "name": "Glen Maddern", "email": "glenmaddern@gmail.com" },
-    { "name": "Jed Foster", "email": "jed@jedfoster.com" },
-    { "name": "Sehrope Sarkuni", "email": "sehrope@jackdb.com" },
-    { "name": "Keiichiro Matsumoto", "email": "matsumos@gmail.com" }
+    {
+      "name": "Brock Whitten",
+      "email": "brock@chloi.io"
+    },
+    {
+      "name": "Brian Donovan",
+      "email": "donovan@squareup.com"
+    },
+    {
+      "name": "Kenneth Ormandy",
+      "email": "kenneth@chloi.io"
+    },
+    {
+      "name": "Zhang Yichao",
+      "email": "echaozh@gmail.com"
+    },
+    {
+      "name": "Carlos Rodriguez"
+    },
+    {
+      "name": "Zeke Sikelianos",
+      "email": "zeke@sikelianos.com"
+    },
+    {
+      "name": "Guilherme Rodrigues",
+      "email": "gadr90@gmail.com"
+    },
+    {
+      "name": "Radu Brehar",
+      "email": "radu@jslog.com"
+    },
+    {
+      "name": "Glen Maddern",
+      "email": "glenmaddern@gmail.com"
+    },
+    {
+      "name": "Jed Foster",
+      "email": "jed@jedfoster.com"
+    },
+    {
+      "name": "Sehrope Sarkuni",
+      "email": "sehrope@jackdb.com"
+    },
+    {
+      "name": "Keiichiro Matsumoto",
+      "email": "matsumos@gmail.com"
+    }
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache": "2.5.0",
-    "jade": "0.35.0",
+    "autoprefixer": "5.1.0",
+    "babel-core": "^4.4.6",
     "coffee-script": "1.9.0",
     "ejs": "1.0.0",
-    "node-sass": "2.0.1",
-    "marked": "0.3.3",
+    "jade": "0.35.0",
     "less": "1.7.5",
-    "stylus": "0.47.3",
+    "lru-cache": "2.5.0",
+    "marked": "0.3.3",
     "minify": "git://github.com/kennethormandy/minify#v0.3.0",
-    "autoprefixer": "5.1.0"
+    "node-sass": "2.0.1",
+    "stylus": "0.47.3"
   },
   "devDependencies": {
     "mocha": "1.8.2",
