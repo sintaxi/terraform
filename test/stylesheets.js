@@ -106,8 +106,6 @@ describe("stylesheets", function(){
     var root = __dirname + '/fixtures/stylesheets/sass'
     var poly = polymer.root(root)
 
-    console.log(root);
-
     it("should have basic css file", function(done){
       poly.render("main.sass", function(error, body){
         should.not.exist(error)
@@ -130,6 +128,22 @@ describe("stylesheets", function(){
         body.should.not.include(";}")
         done()
       })
+    })
+
+  })
+
+  describe("inline", function(){
+
+    var root = __dirname + '/fixtures/stylesheets/inline'
+    var poly = polymer.root(root)
+
+    it("should be able to inline sass", function(done){
+      poly.render("index.jade", function(error, body){
+        console.log(body)
+        body.should.eql("<html><style>body{background:#990000}</style></html>")
+        done()
+      })
+
     })
 
   })
