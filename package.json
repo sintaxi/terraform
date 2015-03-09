@@ -30,7 +30,7 @@
   "dependencies": {
     "lru-cache": "2.5.0",
     "jade": "git://github.com/najamkhn/jade#v1.9.3-bc",
-    "coffee-script": "1.9.0",
+    "coffee-script": "1.9.1",
     "ejs": "1.0.0",
     "node-sass": "2.0.1",
     "marked": "0.3.3",
