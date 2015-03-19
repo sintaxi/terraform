@@ -31,7 +31,7 @@
     "jade": "0.35.0",
     "coffee-script": "1.9.0",
     "ejs": "1.0.0",
-    "node-sass": "2.0.1",
+    "node-sass": "3.0.0-alpha.0",
     "marked": "0.3.3",
     "less": "1.7.5",
     "stylus": "0.47.3",
