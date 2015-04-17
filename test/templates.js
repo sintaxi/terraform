@@ -54,6 +54,18 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should strip off front-matter at the top of markdown file", function(done){
+      poly.render("front-matter.md", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>file with front matter</h1>")
+        body.should.not.include("front-matter-key")
+        body.should.not.include("front-matter-value")
+        body.should.include("<h2>different heading markup style</h2>")
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
