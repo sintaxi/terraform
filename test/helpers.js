@@ -187,6 +187,18 @@ describe("helpers", function(){
       reply.should.be.true
       done()
     })
+    
+    it('should ignore .git dirs', function(done){
+      var reply = polymer.helpers.shouldIgnore(path.join('.git', 'foo.json'))
+      reply.should.be.true
+      done()
+    })
+
+    it('should ignore .gitignore files', function(done){
+      var reply = polymer.helpers.shouldIgnore(path.join('.gitignore'))
+      reply.should.be.true
+      done()
+    })
 
     it('should not ignore if no part of tree starts with underscore.', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('foo', 'bar', 'baz.json'))
