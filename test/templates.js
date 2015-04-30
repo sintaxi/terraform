@@ -33,6 +33,30 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should render partials", function(done){
+      poly.render("hbs/partials.hbs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        // from main file
+        body.should.include("<h1>Hello Handlebars</h1>")
+        // from markdown partial
+        body.should.include("<h1>hello markdown</h1>")
+        done()
+      })
+    })
+
+    it("should pass data into partials", function(done){
+      poly.render("hbs/partials-with-data.hbs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        // from main file
+        body.should.include("<h1>Hello Handlebars</h1>")
+        // from jade partial
+        body.should.include("<h3>Brock Whitten</h3>")
+        done()
+      })
+    })
   })
 
   describe(".md", function(){
@@ -125,15 +149,6 @@ describe("templates", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>hello markdown</h1>")
-        done()
-      })
-    })
-
-    it("should pass data into partials", function(done){
-      poly.render("hbs/partials-with-data.jade", function(error, body){
-        should.not.exist(error)
-        should.exist(body)
-        body.should.include("<h3>Brock Whitten</h3>")
         done()
       })
     })
