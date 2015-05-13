@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache": "2.6.1",
+    "lru-cache": "2.6.2",
     "@kennethormandy/jade": "1.9.3-bc.3",
     "coffee-script": "1.9.2",
     "ejs": "1.0.0",
