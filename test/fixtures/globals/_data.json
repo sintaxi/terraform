@@ -1,5 +1,8 @@
 {
   "about":{
     "title": "About Page"
+  },
+  "blog": {
+    "title": "Blog Page"
   }
 }
