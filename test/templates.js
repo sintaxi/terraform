@@ -25,6 +25,40 @@ describe("templates", function(){
     })
   })
 
+  describe(".hbs", function(){
+    it("should render handlebars file", function(done){
+      poly.render("content.hbs", function(error, body){
+        should.exist(body)
+        body.should.include("<h1>Hello! This is Handlebars!</h1>")
+        done()
+      })
+    })
+
+    it("should render partials", function(done){
+      poly.render("hbs/partials.hbs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        // from main file
+        body.should.include("<h1>Hello Handlebars</h1>")
+        // from markdown partial
+        body.should.include("<h1>hello markdown</h1>")
+        done()
+      })
+    })
+
+    it("should pass data into partials", function(done){
+      poly.render("hbs/partials-with-data.hbs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        // from main file
+        body.should.include("<h1>Hello Handlebars</h1>")
+        // from jade partial
+        body.should.include("<h3>Brock Whitten</h3>")
+        done()
+      })
+    })
+  })
+
   describe(".md", function(){
     it("should render markdown file", function(done){
       poly.render("stuff.md", function(error, body){
@@ -114,10 +148,7 @@ describe("templates", function(){
       poly.render("extend.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Sintaxi</h1>")
-        body.should.include("<h2>Hello World</h2>")
-        body.should.include("<h3>Brock Whitten</h3>")
-        body.should.include("<h4>Vancouver</h4>")
+        body.should.include("<h1>hello markdown</h1>")
         done()
       })
     })
