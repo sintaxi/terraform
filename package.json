@@ -34,7 +34,7 @@
     "ejs": "2.3.1",
     "node-sass": "3.1.2",
     "marked": "0.3.3",
-    "less": "2.5.0",
+    "less": "2.5.1",
     "stylus": "0.47.3",
     "harp-minify": "0.3.2",
     "autoprefixer": "5.1.1"
