@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache": "2.6.2",
+    "lru-cache": "2.6.4",
     "harp-jade": "1.9.3-bc.4",
     "coffee-script": "1.9.2",
     "node-sass": "3.3.2",
