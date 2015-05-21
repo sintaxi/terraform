@@ -29,14 +29,14 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "2.6.2",
-    "@kennethormandy/jade": "1.9.3-bc.3",
+    "harp-jade": "1.9.3-bc.4",
     "coffee-script": "1.9.2",
     "node-sass": "3.3.2",
     "ejs": "2.3.1",
     "marked": "0.3.3",
     "less": "2.5.0",
     "stylus": "0.47.3",
-    "@kennethormandy/minify": "0.3.1",
+    "harp-minify": "0.3.2",
     "autoprefixer": "5.1.1"
   },
   "devDependencies": {
