@@ -37,7 +37,8 @@
     "less": "2.5.1",
     "stylus": "0.47.3",
     "harp-minify": "0.3.2",
-    "autoprefixer": "5.1.1"
+    "autoprefixer": "5.1.1",
+    "handlebars": "3.0.3"
   },
   "devDependencies": {
     "mocha": "1.8.2",
