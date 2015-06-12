@@ -38,6 +38,24 @@ describe("templates", function(){
       })
     })
 
+    it("should highlight code with specified language", function(done){
+      poly.render("code.md", function(error, body){
+        body.should.include('<code class="language-json">')
+        body.should.include('<span class="hljs-attribute">')
+        body.should.include('<span class="hljs-value">')
+        done()
+      })
+    })
+
+    it("should auto highlight code blocks when language is not provided", function(done){
+      poly.render("code.md", function(error, body){
+        body.should.include('<code>')
+        body.should.include('<span class="hljs-tag">')
+        body.should.include('<span class="hljs-comment">')
+        done()
+      })
+    })
+
     it("should minify beyond preprocessor", function(done){
       poly.render("stuff.md", function(error, body){
         should.not.exist(error)
