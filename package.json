@@ -38,7 +38,9 @@
     "stylus": "0.47.3",
     "harp-minify": "0.3.2",
     "autoprefixer": "5.1.1",
-    "handlebars": "3.0.3"
+    "handlebars": "3.0.3",
+    "browserify": "^10.2.4",
+    "through": "^2.3.7"
   },
   "devDependencies": {
     "mocha": "1.8.2",
