@@ -41,13 +41,13 @@ describe("javascripts", function(){
     })
 
   })
-  
+
   describe("browserify", function() {
   	var root = __dirname + "/fixtures/javascripts/browserify"
 	  var poly = polymer.root(root)
-    
+
     process.chdir(root)
-    
+
     it("should require coffeescript file in coffeescript", function(done) {
       poly.render("require_coffee.coffee", function(errors, body) {
         should.not.exist(errors)
@@ -63,14 +63,14 @@ describe("javascripts", function(){
       })
     })
     it("should require coffeescript file in javascript", function(done) {
-      poly.render("require_coffee.es", function(errors, body) {
+      poly.render("require_coffee.js", function(errors, body) {
         should.not.exist(errors)
         body.should.include("MODULE_NOT_FOUND")
         done()
       })
     })
     it("should require javascript file in javascript", function(done) {
-      poly.render("require_js.es", function(errors, body) {
+      poly.render("require_js.js", function(errors, body) {
         should.not.exist(errors)
         body.should.include("MODULE_NOT_FOUND")
         done()
@@ -84,7 +84,7 @@ describe("javascripts", function(){
       })
     })
     it("should skip commented require in javascript", function(done) {
-      poly.render("comment.es", function(errors, body) {
+      poly.render("comment.js", function(errors, body) {
         should.not.exist(errors)
         body.should.not.include("MODULE_NOT_FOUND")
         done()
@@ -98,9 +98,23 @@ describe("javascripts", function(){
       })
     })
     it("should skip already declared require in javascript", function(done) {
-      poly.render("declared.es", function(errors, body) {
+      poly.render("declared.js", function(errors, body) {
         should.not.exist(errors)
         body.should.not.include("MODULE_NOT_FOUND")
+        done()
+      })
+    })
+    it("should require javascript file in heavily nested coffeescript", function(done) {
+      poly.render("nested/way/in/here/nested.coffee", function(errors, body) {
+        should.not.exist(errors)
+        body.should.include("MODULE_NOT_FOUND")
+        done()
+      })
+    })
+    it("should require javascript file in heavily nested javascript file", function(done) {
+      poly.render("nested/way/in/here/nested.js", function(errors, body) {
+        should.not.exist(errors)
+        body.should.include("MODULE_NOT_FOUND")
         done()
       })
     })
