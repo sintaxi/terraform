@@ -259,5 +259,37 @@ describe("errors", function(){
       })
     })
   })
+  
+  describe(".hjson", function() {
+    it("should get error if property name is missing", function(done) {
+      poly.render("json/invalid.hjson", function(error, body) {
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
+  })
+
+  describe(".cson", function() {
+    it("should get error if syntax is invalid", function(done) {
+      poly.render("json/invalid.cson", function(error, body) {
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
+  })
 
 })
