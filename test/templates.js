@@ -54,6 +54,15 @@ describe("templates", function(){
         done()
       })
     })
+    
+    it("should render variable", function(done){
+      poly.render("variable.md", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<p>bar</p>")
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
