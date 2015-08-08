@@ -31,8 +31,6 @@ describe("stylesheets", function(){
       })
     })
 
-
-
   })
 
   describe(".styl", function(){
@@ -73,7 +71,7 @@ describe("stylesheets", function(){
     var root = __dirname + '/fixtures/stylesheets/scss'
     var poly = polymer.root(root)
 
-    console.log(root);
+    // console.log(root);
 
     it("should have basic css file", function(done){
       poly.render("main.scss", function(error, body){
@@ -106,8 +104,6 @@ describe("stylesheets", function(){
     var root = __dirname + '/fixtures/stylesheets/sass'
     var poly = polymer.root(root)
 
-    console.log(root);
-
     it("should have basic css file", function(done){
       poly.render("main.sass", function(error, body){
         should.not.exist(error)
@@ -133,5 +129,24 @@ describe("stylesheets", function(){
     })
 
   })
+
+  // Test for using partial for preprocessed CSS
+  // For emails, etc.
+  //
+  // describe("inline", function(){
+  //
+  //   var root = __dirname + '/fixtures/stylesheets/inline'
+  //   var poly = polymer.root(root)
+  //
+  //   it("should be able to inline sass", function(done){
+  //     poly.render("index.jade", function(error, body){
+  //       console.log(body)
+  //       body.should.eql("<html><style>body{background:#990000}</style></html>")
+  //       done()
+  //     })
+  //
+  //   })
+  //
+  // })
 
 })
