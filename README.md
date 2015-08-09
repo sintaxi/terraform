@@ -4,10 +4,10 @@
 
 ## Features
 
-- pre-processorse
+- pre-processors
 - layouts
 - partials
-- metadata (via _data.json)
+- metadata (via \_data.json/\_data.cson/\_data.hjson)
 - LRU cache (production mode)
 
 ### Supported Pre-Processors
@@ -15,6 +15,7 @@
 **HTML** – EJS, Jade, Markdown
 **CSS** – LESS, Stylus, Sass (SCSS)
 **JavaScript** – CoffeeScript
+**JSON** - CSON, Hjson
 
 ## Install
 

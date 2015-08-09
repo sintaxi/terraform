@@ -34,11 +34,15 @@ describe("helpers", function(){
     it('should look for templates on json files.', function(done){
       var list = polymer.helpers.buildPriorityList('profile.json')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
+      list.should.have.lengthOf(7)
       list.should.include('profile.json.jade')
       list.should.include('profile.json.ejs')
       list.should.include('profile.json.md')
-      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
+      list.should.include('profile.cson')
+      list.should.include('profile.hjson')
+      list.should.include('profile.json.cson')
+      list.should.include('profile.json.hjson')
+      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md, profile.cson, profile.hjson, profile.json.cson, profile.json.hjson'. split(', '))
       done()
     })
 
