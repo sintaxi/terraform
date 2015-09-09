@@ -32,7 +32,7 @@
     "jade": "git://github.com/harp/jade#v1.9.3-bc.2",
     "coffee-script": "1.9.2",
     "ejs": "1.0.0",
-    "node-sass": "3.1.2",
+    "node-sass": "3.3.2",
     "marked": "0.3.3",
     "less": "2.5.0",
     "stylus": "0.47.3",
