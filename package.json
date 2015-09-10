@@ -71,11 +71,11 @@
     "coffee-script": "1.9.2",
     "ejs": "1.0.0",
     "jade": "git://github.com/harp/jade#v1.9.3-bc.2",
+    "node-sass": "3.3.2",
+    "marked": "0.3.3",
     "less": "2.5.0",
     "lru-cache": "2.6.1",
-    "marked": "0.3.3",
     "minify": "git://github.com/kennethormandy/minify#v0.3.0",
-    "node-sass": "3.0.0-beta.5",
     "stylus": "0.47.3",
     "through": "^2.3.7"
   },
