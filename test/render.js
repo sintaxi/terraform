@@ -171,6 +171,18 @@ describe("render(path, callback)", function(){
       })
     })
 
+    it("should render special characters in asciidoc", function(done){
+      var root = __dirname + "/fixtures/render/internationalization"
+      var poly = polymer.root(root)
+      poly.render("asciidoc.adoc", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        body.should.include("<h2 id=\"__i_t_rn_ti_n_liz_ti_n\">“Iñtërnâtiônàlizætiøn”</h2>")
+        body.should.include("</html>")
+        done()
+      })
+    })
+
     it("should render special characters in less", function(done){
       var root = __dirname + "/fixtures/render/internationalization"
       var poly = polymer.root(root)
