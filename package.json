@@ -35,6 +35,7 @@
     "ejs": "2.3.4",
     "marked": "0.3.5",
     "less": "2.5.1",
+    "lodash": "3.10.1",
     "stylus": "0.47.3",
     "harp-minify": "0.3.3",
     "autoprefixer": "5.2.0",
