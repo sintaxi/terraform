@@ -34,6 +34,7 @@
     "node-sass": "3.3.3",
     "ejs": "2.3.4",
     "marked": "0.3.5",
+    "moment": "^2.10.6",
     "less": "2.5.1",
     "stylus": "0.47.3",
     "harp-minify": "0.3.3",
