@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "0.11.0",
+  "version": "0.12.1",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -28,16 +28,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lru-cache": "2.6.5",
+    "lru-cache": "2.7.0",
     "harp-jade": "1.9.3-bc.4",
     "coffee-script": "1.10.0",
-    "node-sass": "3.3.2",
+    "node-sass": "3.3.3",
     "ejs": "2.3.4",
     "marked": "0.3.5",
     "less": "2.5.1",
+    "lodash": "3.10.1",
     "stylus": "0.47.3",
-    "harp-minify": "0.3.2",
-    "autoprefixer": "5.2.0"
+    "harp-minify": "0.3.3",
+    "autoprefixer": "5.2.0",
+    "postcss": "5.0.5"
   },
   "devDependencies": {
     "mocha": "1.8.2",
