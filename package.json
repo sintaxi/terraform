@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "2.7.0",
-    "harp-jade": "1.9.3-bc.4",
+    "jade": "1.11.0",
     "coffee-script": "1.10.0",
     "node-sass": "3.3.3",
     "ejs": "2.3.4",
