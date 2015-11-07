@@ -96,4 +96,15 @@ describe("data", function(){
     })
   })
 
+  describe("dynamic", function(){
+    it("should return public object", function(done){
+      var root = __dirname + "/fixtures/data/dynamic"
+      var poly = polymer.root(root)
+      poly.render("pub.json.jade", { "layout": false }, function(err, result){
+        var pub = JSON.parse(result)
+        should.not.exist(pub[".foo"])
+        done()
+      })
+    })
+  })
 })

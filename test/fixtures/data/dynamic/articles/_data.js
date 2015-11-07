@@ -1,0 +1,13 @@
+return {
+  "hello-world": {
+    "title" : "Earth people, New York to California",
+    "author": "Brock Whitten"
+  },
+  "hello-jupiter": {
+    "title" : "I was born on Jupiter",
+    "author": "Brock Whitten"
+  },
+  "hello-pluto": {
+    "title": "<a href=\"http://harpjs.com\">Harp</a>"
+  }
+}
