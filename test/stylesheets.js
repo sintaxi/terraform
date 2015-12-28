@@ -144,6 +144,23 @@ describe("stylesheets", function(){
       })
     })
 
+    it("should render a source map", function(done){
+      poly.render("main.sass", function(error, body, sourcemap){
+        should.not.exist(error)
+        should.exist(sourcemap)
+        sourcemap.toString().should.include('main.sass')
+        sourcemap.toString().should.include('_part.sass')
+        done()
+      })
+    })
+    it("should not include the source map in the css body", function(done){
+      poly.render("main.sass", function(error, body, sourcemap){
+        should.not.exist(error)
+        body.should.not.include("/*#")
+        done()
+      })
+    })
+
   })
 
   // Test for using partial for preprocessed CSS
