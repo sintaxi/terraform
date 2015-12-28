@@ -36,7 +36,7 @@
     "marked": "0.3.5",
     "lodash": "3.10.1",
     "less": "2.5.3",
-    "stylus": "0.47.3",
+    "stylus": "0.53.0",
     "harp-minify": "0.3.3",
     "autoprefixer": "6.1.0",
     "postcss": "5.0.10"
