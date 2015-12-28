@@ -31,6 +31,23 @@ describe("stylesheets", function(){
       })
     })
 
+    it("should render a source map", function(done){
+      poly.render("main.less", function(error, body, sourcemap){
+        should.not.exist(error)
+        should.exist(sourcemap)
+        sourcemap.toString().should.include('main.less')
+        sourcemap.toString().should.include('_part.less')
+        done()
+      })
+    })
+    it("should not include the source map in the css body", function(done){
+      poly.render("main.less", function(error, body, sourcemap){
+        should.not.exist(error)
+        body.should.not.include("/*#")
+        done()
+      })
+    })
+
   })
 
   describe(".styl", function(){
