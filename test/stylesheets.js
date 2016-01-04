@@ -96,6 +96,22 @@ describe("stylesheets", function(){
         done()
       })
     })
+    it("should render a source map", function(done){
+      poly.render("main.scss", function(error, body, sourcemap){
+        should.not.exist(error)
+        should.exist(sourcemap)
+        sourcemap.toString().should.include('main.scss')
+        sourcemap.toString().should.include('_part.scss')
+        done()
+      })
+    })
+    it("should not include the source map in the css body", function(done){
+      poly.render("main.scss", function(error, body, sourcemap){
+        should.not.exist(error)
+        body.should.not.include("/*#")
+        done()
+      })
+    })
 
   })
 
