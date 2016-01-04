@@ -187,7 +187,7 @@ describe("helpers", function(){
       reply.should.be.true
       done()
     })
-    
+
     it('should ignore .git dirs', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('.git', 'foo.json'))
       reply.should.be.true
@@ -266,6 +266,24 @@ describe("helpers", function(){
 
   describe('.layoutCascade(filename)', function(){
 
+  })
+
+  describe('.getCurrent(sourcePath)', function(){
+    it('should handle folders', function(done){
+        polymer.helpers.getCurrent('a/b/c.md').should.eql({
+            'source': 'c',
+            'path': ['a', 'b', 'c']
+        })
+        done()
+    })
+
+    it('should handle dots in sourcePath.', function(done){
+        polymer.helpers.getCurrent('v1.3.3.7/1.0/doc.md').should.eql({
+            'source': 'doc',
+            'path': ['v1.3.3.7', '1.0', 'doc']
+        })
+        done()
+    })
   })
 
 })
