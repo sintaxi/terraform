@@ -24,7 +24,18 @@
     "Jed Foster <jed@jedfoster.com>",
     "Sehrope Sarkuni <sehrope@jackdb.com>",
     "Keiichiro Matsumoto <matsumos@gmail.com>",
-    "Najam Khn <najamkhn@gmail.com>"
+    "Najam Khn <najamkhn@gmail.com>",
+    "Eric Drechsel",
+    "Najam Khan",
+    "Zhang Yichao <echaozh@gmail.com>",
+    "Dave Jensen",
+    "Ryan Lewis",
+    "Julian Duque <julianduquej@gmail.com>",
+    "Lu Nelson <lunelson@gmail.com>",
+    "Stephen Way",
+    "Pierre Spring <pierre@nelm.io>",
+    "John Boxall <john@mobify.com>",
+    "TJ Nicolaides <tjnicolaides@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
