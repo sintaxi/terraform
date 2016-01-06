@@ -55,7 +55,7 @@
     "through": "2.3.8"
   },
   "devDependencies": {
-    "mocha": "1.8.2",
+    "mocha": "2.3.4",
     "should": "1.2.2"
   }
 }
