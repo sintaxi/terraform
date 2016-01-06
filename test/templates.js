@@ -58,11 +58,10 @@ describe("templates", function(){
 
   describe(".jade", function(){
 
-    it("should give deprecated !!! warning", function(done){
+    it("should not give deprecated !!! warning", function(done){
       poly.render("deprecated/jade/index.jade", function(error, body){
-        should.not.exist(error)
-        should.exist('`!!!` is deprecated, you must now use `doctype`')
-        should.exist(body)
+        should.exist(error)
+        should.not.exist(body)
         done()
       })
     })

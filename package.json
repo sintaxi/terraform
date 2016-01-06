@@ -33,6 +33,7 @@
     "coffee-script": "1.10.0",
     "ejs": "2.3.4",
     "harp-minify": "0.3.3",
+    "jade": "1.11.0",
     "less": "2.5.3",
     "lodash": "3.10.1",
     "lru-cache": "2.7.0",
