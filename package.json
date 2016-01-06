@@ -12,74 +12,35 @@
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
-    {
-      "name": "Brock Whitten",
-      "email": "brock@chloi.io"
-    },
-    {
-      "name": "Brian Donovan",
-      "email": "donovan@squareup.com"
-    },
-    {
-      "name": "Kenneth Ormandy",
-      "email": "kenneth@chloi.io"
-    },
-    {
-      "name": "Zhang Yichao",
-      "email": "echaozh@gmail.com"
-    },
-    {
-      "name": "Carlos Rodriguez"
-    },
-    {
-      "name": "Zeke Sikelianos",
-      "email": "zeke@sikelianos.com"
-    },
-    {
-      "name": "Guilherme Rodrigues",
-      "email": "gadr90@gmail.com"
-    },
-    {
-      "name": "Radu Brehar",
-      "email": "radu@jslog.com"
-    },
-    {
-      "name": "Glen Maddern",
-      "email": "glenmaddern@gmail.com"
-    },
-    {
-      "name": "Jed Foster",
-      "email": "jed@jedfoster.com"
-    },
-    {
-      "name": "Sehrope Sarkuni",
-      "email": "sehrope@jackdb.com"
-    },
-    {
-      "name": "Keiichiro Matsumoto",
-      "email": "matsumos@gmail.com"
-    },
-    {
-      "name": "Najam Khn",
-      "email": "najamkhn@gmail.com"
-    }
+    "Brock Whitten  <brock@chloi.io>",
+    "Brian Donovan <donovan@squareup.com>",
+    "Kenneth Ormandy <kenneth@chloi.io>",
+    "Zhang Yichao <echaozh@gmail.com>",
+    "Carlos Rodriguez",
+    "Zeke Sikelianos <zeke@sikelianos.com>",
+    "Guilherme Rodrigues <gadr90@gmail.com>",
+    "Radu Brehar <radu@jslog.com>",
+    "Glen Maddern <glenmaddern@gmail.com>",
+    "Jed Foster <jed@jedfoster.com>",
+    "Sehrope Sarkuni <sehrope@jackdb.com>",
+    "Keiichiro Matsumoto <matsumos@gmail.com>",
+    "Najam Khn <najamkhn@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "browserify": "12.0.1",
-    "through": "2.3.8",
-    "lru-cache": "2.7.0",
-    "harp-jade": "1.9.3-bc.4",
-    "coffee-script": "1.10.0",
-    "node-sass": "3.4.2",
-    "ejs": "2.3.4",
-    "marked": "0.3.5",
-    "lodash": "3.10.1",
-    "less": "2.5.3",
-    "stylus": "0.53.0",
-    "harp-minify": "0.3.3",
     "autoprefixer": "6.1.0",
-    "postcss": "5.0.12"
+    "browserify": "12.0.1",
+    "coffee-script": "1.10.0",
+    "ejs": "2.3.4",
+    "harp-minify": "0.3.3",
+    "less": "2.5.3",
+    "lodash": "3.10.1",
+    "lru-cache": "2.7.0",
+    "marked": "0.3.5",
+    "node-sass": "3.4.2",
+    "postcss": "5.0.12",
+    "stylus": "0.53.0",
+    "through": "2.3.8"
   },
   "devDependencies": {
     "mocha": "1.8.2",
