@@ -260,4 +260,20 @@ describe("errors", function(){
     })
   })
 
+  describe(".js", function(){
+    it("should error with an “invalid” JavaScript file", function(done){
+      poly.render("js/invalid.js", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source', "JavaScript")
+        error.should.have.property('dest', "JavaScript")
+        error.should.have.property('lineno')
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack')
+        done()
+      })
+    })
+  })
+
 })
