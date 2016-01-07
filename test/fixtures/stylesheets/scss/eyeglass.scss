@@ -1,0 +1,7 @@
+@import "eyeglass-sample";
+
+body {
+  &:before {
+    content: hello("Kenneth")
+  }
+}
