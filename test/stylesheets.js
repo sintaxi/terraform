@@ -3,6 +3,52 @@ var polymer = require('../')
 
 describe("stylesheets", function(){
 
+  describe(".css", function(){
+
+    var root = __dirname + '/fixtures/stylesheets/css'
+    var poly = polymer.root(root)
+
+    it("should have basic css file", function(done){
+      poly.render("main.css", function(error, body){
+        should.not.exist(error)
+        body.should.include("background:#ffc0cb")
+        done()
+      })
+    })
+    it("should autoprefix css", function(done){
+      poly.render("main.css", function(error, body){
+        should.not.exist(error)
+        body.should.include("-webkit-font-feature-settings")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("main.css", function(error, body){
+        should.not.exist(error)
+        body.should.not.include(";}")
+        done()
+      })
+    })
+
+    // it("should render a source map", function(done){
+    //   poly.render("main.css", function(error, body, sourcemap){
+    //     should.not.exist(error)
+    //     should.exist(sourcemap)
+    //     sourcemap.toString().should.include('main.css')
+    //     done()
+    //   })
+    // })
+    it("should not include the source map in the css body", function(done){
+      poly.render("main.css", function(error, body, sourcemap){
+        should.not.exist(error)
+        body.should.not.include("/*#")
+        done()
+      })
+    })
+
+  })
+
   describe(".less", function(){
 
     var root = __dirname + '/fixtures/stylesheets/less'

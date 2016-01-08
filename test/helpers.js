@@ -9,8 +9,8 @@ describe("helpers", function(){
     it('should return all possible file names for html ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('index.html')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(6)
-      var plist = "index.jade, index.ejs, index.md, index.html.jade, index.html.ejs, index.html.md".split(', ')
+      list.should.have.lengthOf(8)
+      var plist = "index.html, index.jade, index.ejs, index.md, index.html.html, index.html.jade, index.html.ejs, index.html.md".split(', ')
       list.should.eql(plist)
       done()
     })
@@ -18,8 +18,8 @@ describe("helpers", function(){
     it('should build priority list for css file.', function(done){
       var list = polymer.helpers.buildPriorityList('main.css')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(8)
-      list.should.eql("main.styl, main.less, main.scss, main.sass, main.css.styl, main.css.less, main.css.scss, main.css.sass".split(', '))
+      list.should.have.lengthOf(10)
+      list.should.eql("main.css, main.scss, main.sass, main.less, main.styl, main.css.css, main.css.scss, main.css.sass, main.css.less, main.css.styl".split(', '))
       done()
     })
 
@@ -36,27 +36,27 @@ describe("helpers", function(){
     it('should build priority list assuming template file when unknown.', function(done){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('feed.xml.html, feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
       done()
     })
 
     it('should look for templates on json files.', function(done){
       var list = polymer.helpers.buildPriorityList('profile.json')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
+      list.should.have.lengthOf(4)
       list.should.include('profile.json.jade')
       list.should.include('profile.json.ejs')
       list.should.include('profile.json.md')
-      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
+      list.should.eql('profile.json.html, profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
       done()
     })
 
     it('should look for templates when no ext present.', function(done){
       var list = polymer.helpers.buildPriorityList('appcache')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('appcache.jade, appcache.ejs, appcache.md'.split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('appcache.html, appcache.jade, appcache.ejs, appcache.md'.split(', '))
       done()
     })
 
