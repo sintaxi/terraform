@@ -6,6 +6,28 @@ describe("templates", function(){
   var root = __dirname + "/fixtures/templates"
   var poly = polymer.root(root)
 
+  describe(".html", function(){
+    it("should render html file", function(done){
+      poly.render("html/index.html", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1")
+        body.should.include("Chloi Inc.</h1>")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("html/index.html", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
+        body.should.include("<h1 class=\"h1\">")
+        body.should.not.include("<h1           class=\"h1\">")
+        done()
+      })
+    })
+  })
+
   describe(".ejs", function(){
     it("should render ejs file", function(done){
       poly.render("bio.ejs", function(error, body){
