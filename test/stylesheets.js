@@ -146,6 +146,17 @@ describe("stylesheets", function(){
         done()
       })
     })
+    it("should include an Eyeglass module in an SCSS file", function (done) {
+      poly.render("eyeglass.scss", function(error, body, sourcemap) {
+        should.not.exist(error)
+        should.exist(body)
+        should.exist(sourcemap)
+        body.should.include("Kenneth")
+        body.should.include("hello")
+        body.should.include(".sassy")
+        done()
+      })
+    })
 
   })
 
@@ -194,6 +205,18 @@ describe("stylesheets", function(){
         done()
       })
     })
+    it("should include an SCSS Eyeglass module in a Sass file", function (done) {
+      poly.render("eyeglass.sass", function(error, body, sourcemap) {
+        should.not.exist(error)
+        should.exist(body)
+        should.exist(sourcemap)
+        body.should.include("Kenneth")
+        body.should.include("hello")
+        body.should.include(".sassy")
+        done()
+      })
+    })
+
 
   })
 
