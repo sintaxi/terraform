@@ -55,7 +55,7 @@
     "through": "2.3.8"
   },
   "devDependencies": {
-    "eyeglass": "0.8.0",
+    "eyeglass": "0.8.1",
     "eyeglass-sample": "0.0.3",
     "mocha": "2.3.4",
     "should": "1.2.2"
