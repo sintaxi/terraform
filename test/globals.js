@@ -1,4 +1,3 @@
-
 var should  = require('should')
 var polymer = require('../')
 
@@ -22,6 +21,15 @@ describe("data", function(){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<title>About Page</title>")
+        done()
+      })
+    })
+    
+    it("should include global in nunjucks", function(done) {
+      poly.render("index.nunjucks", function(error, body) {
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<title>Default Title</title>")
         done()
       })
     })
