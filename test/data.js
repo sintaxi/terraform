@@ -27,6 +27,16 @@ describe("data", function(){
       })
     })
 
+    it("should handle escaped html", function(done){
+      poly.render("articles/hello-pluto.jade", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1><a href=\"http://harpjs.com\">Harp</a></h1>")
+        done()
+      })
+    })
+
+
     it("should be available to override data when calling partial", function(done){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
@@ -86,4 +96,16 @@ describe("data", function(){
     })
   })
 
+  describe("dynamic", function(){
+    it("should return public object", function(done){
+      var root = __dirname + "/fixtures/data/dynamic"
+      var poly = polymer.root(root)
+      poly.render("pub.json.jade", { "layout": false }, function(err, result){
+        var pub = JSON.parse(result)
+        should.exist(pub["articles"]["_data"]["hello-world"])
+        should.not.exist(pub[".foo"])
+        done()
+      })
+    })
+  })
 })
