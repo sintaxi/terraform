@@ -24,6 +24,14 @@ describe("templates", function(){
         done()
       })
     })
+    
+    it("should minify beyond preprocessor", function(done){
+      poly.render("nunjucks-sample.nunjucks", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
+        done()
+      })
+    })
   })
 
   describe(".ejs", function(){
