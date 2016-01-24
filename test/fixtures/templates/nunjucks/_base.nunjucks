@@ -5,6 +5,7 @@
     </head>
     
     <body>
-        This layout file should be ignored.
+        <h1>Nunjucks</h1>
+        {% block content %}Should be overwritten.{% endblock %}
     </body>
 </html>

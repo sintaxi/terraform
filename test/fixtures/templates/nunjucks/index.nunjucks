@@ -1,4 +1,4 @@
-{% extends 'nunjucks/_layout.nunjucks' %}
+{% extends 'nunjucks/_base.nunjucks' %}
 
 {% block content %}
     <p>This is a sample file.</p>

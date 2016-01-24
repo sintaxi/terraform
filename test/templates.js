@@ -16,31 +16,24 @@ describe("templates", function(){
       })
     })
     
-    it("should render file with {% extends %}", function(done) {
+    it("should be configured to extend and include another files", function(done) {
       poly.render("nunjucks/index.nunjucks", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>Nunjucks</h1>")
-        done()
-      })
-    })
-    
-    it("blocks should work as expected", function(done) {
-      poly.render("nunjucks/index.nunjucks", function(error, body){
-        should.not.exist(error)
-        should.exist(body)
         body.should.include("<p>This is a sample file.</p>")
         done()
       })
     })
     
-    it("should minify beyond preprocessor", function(done){
-      poly.render("nunjucks-sample.nunjucks", function(error, body){
+    it("should bypass layout rendering", function(done) {
+      poly.render("nunjucks/index.nunjucks", function(error, body){
         should.not.exist(error)
-        body.should.not.include("\n\n")
+        body.should.not.include('This layout file should be ignored.')
         done()
       })
     })
+    
   })
 
   describe(".ejs", function(){
