@@ -25,6 +25,15 @@ describe("templates", function(){
       })
     })
     
+    it("blocks should work as expected", function(done) {
+      poly.render("nunjucks/index.nunjucks", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<p>This is a sample file.</p>")
+        done()
+      })
+    })
+    
     it("should minify beyond preprocessor", function(done){
       poly.render("nunjucks-sample.nunjucks", function(error, body){
         should.not.exist(error)
