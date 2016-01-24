@@ -7,11 +7,20 @@ describe("templates", function(){
   var poly = polymer.root(root)
 
   describe(".nunjucks", function(){
-    it("should render nunjucks file", function(done){
+    it("should render simple flat nunjucks file", function(done){
       poly.render("nunjucks-sample.nunjucks", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("Hello Nunjucks!")
+        done()
+      })
+    })
+    
+    it("should render file with {% extends %}", function(done) {
+      poly.render("nunjucks/index.nunjucks", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Nunjucks</h1>")
         done()
       })
     })

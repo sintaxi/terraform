@@ -1,0 +1,5 @@
+{% extends 'nunjucks/_layout.nunjucks' %}
+
+{% block content %}
+    <p>This is a sample file.</p>
+{% endblock %}
