@@ -26,6 +26,16 @@ describe("data", function(){
         done()
       })
     })
+    
+    it("should be available in the nunjucks template", function(done){
+      poly.render("articles/hello-jupiter.nunjucks", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h3>I was born on Jupiter</h3>")
+        body.should.include("<h4>Brock Whitten</h4>")
+        done()
+      })
+    })
 
     it("should handle escaped html", function(done){
       poly.render("articles/hello-pluto.jade", function(error, body){
