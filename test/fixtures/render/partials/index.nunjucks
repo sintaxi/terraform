@@ -1,0 +1,6 @@
+<h1>Hello</h1>
+{% partial("world.jade") %}
+{% partial("brazil.jade") %}
+{% partial("canada.md") %}
+
+<!--!= partial("_places/any.jade", { place: "Gastown" })-->
