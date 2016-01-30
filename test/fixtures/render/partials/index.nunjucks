@@ -1,6 +1,6 @@
 <h1>Hello</h1>
-{% partial fileName="world.jade" %}
-{% partial fileName="_places/brazil.jade" %}
-{% partial fileName="_places/canada.md" %}
+{% partial "world.jade" %}
+{% partial "_places/brazil.jade" %}
+{% partial "_places/canada.md" %}
 
-{% partial fileName="_places/any.jade", locals={ place: "Gastown" } %}
+{% partial '_places/any.jade', place='Gastown' %}
