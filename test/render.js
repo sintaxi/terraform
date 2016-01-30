@@ -119,7 +119,7 @@ describe("render(path, callback)", function(){
         body.should.include("<h2>Hello World</h2>")
         body.should.include("<h2>Hello Brazil</h2>")
         body.should.include("<h2>Hello Canada</h2>")
-        // body.should.include("<h2>Hello Gastown</h2>")
+        body.should.include("<h2>Hello Gastown</h2>")
         done()
       })
     })
