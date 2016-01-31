@@ -33,6 +33,15 @@ describe("data", function(){
         done()
       })
     })
+    
+    it("should provide context for custom partial tag", function(done){
+      poly.render("partialGlobals.nunjucks", function(error, body) {
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<title>Default Title</title>")
+        done()
+      })
+    })
 
   })
 
