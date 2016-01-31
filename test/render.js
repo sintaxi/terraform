@@ -120,6 +120,8 @@ describe("render(path, callback)", function(){
         body.should.include("<h2>Hello Brazil</h2>")
         body.should.include("<h2>Hello Canada</h2>")
         body.should.include("<h2>Hello Gastown</h2>")
+        body.should.include("<h2>Hello Greece</h2>")
+        body.should.include("<p>I really enjoy my stay at Athens</p>")
         done()
       })
     })

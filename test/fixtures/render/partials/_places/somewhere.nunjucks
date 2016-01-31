@@ -1,0 +1,3 @@
+<h2>Hello {{country}}</h2>
+
+<p>I really enjoy my stay at {{city}}</p>
