@@ -4,3 +4,4 @@
 {% partial "_places/canada.md" %}
 {% partial '_places/any.jade', place='Gastown' %}
 {% partial '_places/somewhere.nunjucks', city='Athens', country='Greece' %}
+{% partial '_places/item.nunjucks', item={title: 'Title', content: 'Content'} %}

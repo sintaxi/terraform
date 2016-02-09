@@ -110,7 +110,7 @@ describe("render(path, callback)", function(){
         done()
       })
     })
-      
+
     it("should have mixes partials with locals for nunjucks as well", function(done){
       poly.render("index.nunjucks", function(error, body){
         should.not.exist(error)
@@ -122,6 +122,7 @@ describe("render(path, callback)", function(){
         body.should.include("<h2>Hello Gastown</h2>")
         body.should.include("<h2>Hello Greece</h2>")
         body.should.include("<p>I really enjoy my stay at Athens</p>")
+        body.should.include("<h2>Title</h2>")
         done()
       })
     })
