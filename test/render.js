@@ -123,6 +123,7 @@ describe("render(path, callback)", function(){
         body.should.include("<h2>Hello Greece</h2>")
         body.should.include("<p>I really enjoy my stay at Athens</p>")
         body.should.include("<h2>Title</h2>")
+        body.should.include("<p>Content</p>")
         done()
       })
     })
