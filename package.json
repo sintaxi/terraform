@@ -12,6 +12,7 @@
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [
+    "Frank Lemanschik <frank@dspeed.eu>",
     "Brock Whitten  <brock@chloi.io>",
     "Brian Donovan <donovan@squareup.com>",
     "Kenneth Ormandy <kenneth@chloi.io>",
@@ -45,6 +46,7 @@
     "ejs": "2.3.4",
     "harp-minify": "0.4.0",
     "jade": "1.11.0",
+    "pug": "^2.0.0-alpha6",
     "less": "2.5.3",
     "lodash": "3.10.1",
     "lru-cache": "4.0.0",
