@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
