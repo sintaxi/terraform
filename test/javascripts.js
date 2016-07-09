@@ -3,6 +3,19 @@ var polymer   = require('../')
 
 describe("javascripts", function(){
 
+  describe("babel", function() {
+    var root = __dirname + "/fixtures/javascripts/babel"
+    var poly = polymer.root(root)
+
+    it("should return same js when run without .babelrc", function(done) {
+      poly.render("example.js", function(errors, body) {
+        should.not.exist(errors)
+        body.should.equal('var jsthing="I am some JS";var foo=function(){var bar=1+1};foo();')
+        done()
+      })
+    })
+  })
+
   describe(".coffee", function(){
     var root = __dirname + "/fixtures/javascripts/coffee"
     var poly = polymer.root(root)
