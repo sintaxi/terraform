@@ -23,6 +23,16 @@ describe("helpers", function(){
       done()
     })
 
+    it('should return all possible file names for js ordered by priority.', function(done){
+      var list = polymer.helpers.buildPriorityList('/js/bundle.js')
+      list.should.be.an.instanceOf(Array)
+      list.should.have.lengthOf(4)
+      var plist = "js/bundle.js, js/bundle.coffee, js/bundle.js.js, js/bundle.js.coffee".split(', ')
+      list.should.eql(plist)
+      done()
+    })
+
+
     it('should build priority list assuming template file when unknown.', function(done){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
@@ -187,7 +197,7 @@ describe("helpers", function(){
       reply.should.be.true
       done()
     })
-    
+
     it('should ignore .git dirs', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('.git', 'foo.json'))
       reply.should.be.true
@@ -257,6 +267,18 @@ describe("helpers", function(){
       done()
     })
 
+    it('should return true if javascript file.', function(done){
+      polymer.helpers.isJavaScript(path.join('foo.js')).should.be.true
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.js')).should.be.true
+      done()
+    })
+
+    it('should return true if minified javascript file.', function(done){
+      polymer.helpers.isJavaScript(path.join('foo.min.js')).should.be.true
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'bas.min.js')).should.be.true
+      done()
+    })
+
     it('should return false if less file.', function(done){
       polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true
       polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true
@@ -266,6 +288,24 @@ describe("helpers", function(){
 
   describe('.layoutCascade(filename)', function(){
 
+  })
+
+  describe('.getCurrent(sourcePath)', function(){
+    it('should handle folders', function(done){
+        polymer.helpers.getCurrent('a/b/c.md').should.eql({
+            'source': 'c',
+            'path': ['a', 'b', 'c']
+        })
+        done()
+    })
+
+    it('should handle dots in sourcePath.', function(done){
+        polymer.helpers.getCurrent('v1.3.3.7/1.0/doc.md').should.eql({
+            'source': 'doc',
+            'path': ['v1.3.3.7', '1.0', 'doc']
+        })
+        done()
+    })
   })
 
 })
