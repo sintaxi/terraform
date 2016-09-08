@@ -1,5 +1,8 @@
 {
   "layout-false":{
     "layout": false
+  },
+  "layout-false-alt.json":{
+    "layout": false
   }
 }

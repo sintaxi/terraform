@@ -1,5 +1,5 @@
 {
   "about": {
-    "layout": "custom_layout.jade"
+    "layout": "custom_layout"
   }
 }
