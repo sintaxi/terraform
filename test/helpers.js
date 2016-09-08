@@ -292,6 +292,30 @@ describe("helpers", function(){
 
   describe('.getCurrent(sourcePath)', function(){
     it('should handle folders', function(done){
+        polymer.helpers.getCurrent('to/some/file.md').should.eql({
+            'source': 'file',
+            'path': ['to', 'some', 'file']
+        })
+        done()
+    })
+
+    it('should handle folders', function(done){
+        polymer.helpers.getCurrent('to/some/file.json.jade').should.eql({
+            'source': 'file.json',
+            'path': ['to', 'some', 'file.json']
+        })
+        done()
+    })
+
+    it('should handle folders', function(done){
+        polymer.helpers.getCurrent('to/some/file.html.jade').should.eql({
+            'source': 'file.html',
+            'path': ['to', 'some', 'file.html']
+        })
+        done()
+    })
+
+    it('should handle folders', function(done){
         polymer.helpers.getCurrent('a/b/c.md').should.eql({
             'source': 'c',
             'path': ['a', 'b', 'c']
