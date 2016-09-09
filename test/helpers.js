@@ -26,8 +26,7 @@ describe("helpers", function(){
     it('should return all possible file names for js ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('/js/bundle.js')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(4)
-      var plist = "js/bundle.js, js/bundle.coffee, js/bundle.js.js, js/bundle.js.coffee".split(', ')
+      var plist = "js/bundle.coffee, js/bundle.js.coffee".split(', ')
       list.should.eql(plist)
       done()
     })
@@ -268,14 +267,14 @@ describe("helpers", function(){
     })
 
     it('should return true if javascript file.', function(done){
-      polymer.helpers.isJavaScript(path.join('foo.js')).should.be.true
-      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.js')).should.be.true
+      polymer.helpers.isJavaScript(path.join('foo.js')).should.be.false
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.js')).should.be.false
       done()
     })
 
     it('should return true if minified javascript file.', function(done){
-      polymer.helpers.isJavaScript(path.join('foo.min.js')).should.be.true
-      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'bas.min.js')).should.be.true
+      polymer.helpers.isJavaScript(path.join('foo.min.js')).should.be.false
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'bas.min.js')).should.be.false
       done()
     })
 

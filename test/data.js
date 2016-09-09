@@ -84,17 +84,17 @@ describe("data", function(){
     })
   })
 
-  // describe("public", function(){
-  //   it("should return public object", function(done){
-  //     var root = __dirname + "/fixtures/data/valid"
-  //     var poly = polymer.root(root)
-  //     poly.render("pub.json.jade", function(err, result){
-  //       var pub = JSON.parse(result)
-  //       should.not.exist(pub[".foo"])
-  //       done()
-  //     })
-  //   })
-  // })
+  describe("public", function(){
+    it("should return public object", function(done){
+      var root = __dirname + "/fixtures/data/valid"
+      var poly = polymer.root(root)
+      poly.render("pub.json.jade", function(err, result){
+        var pub = JSON.parse(result)
+        should.not.exist(pub[".foo"])
+        done()
+      })
+    })
+  })
 
   describe("dynamic", function(){
     it("should return public object", function(done){
