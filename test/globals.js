@@ -9,7 +9,7 @@ describe("data", function(){
     var poly = polymer.root(root, { "title": "Default Title" })
 
     it("should have global available by default", function(done){
-      poly.render("index.jade", function(error, body){
+      poly.render("index.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<title>Default Title</title>")
@@ -18,7 +18,7 @@ describe("data", function(){
     })
 
     it("should be able to override globals in the template vars", function(done){
-      poly.render("about.jade", function(error, body){
+      poly.render("about.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<title>About Page</title>")

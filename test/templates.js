@@ -56,18 +56,18 @@ describe("templates", function(){
     })
   })
 
-  describe(".jade", function(){
+  describe(".pug", function(){
 
     it("should not give deprecated !!! warning", function(done){
-      poly.render("deprecated/jade/index.jade", function(error, body){
+      poly.render("deprecated/pug/index.pug", function(error, body){
         should.exist(error)
         should.not.exist(body)
         done()
       })
     })
 
-    it("should have jade partial layout and include working", function(done){
-      poly.render("index.jade", function(error, body){
+    it("should have pug partial layout and include working", function(done){
+      poly.render("index.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>Sintaxi</h1>")
@@ -79,7 +79,7 @@ describe("templates", function(){
     })
 
     it("should minify beyond preprocessor", function(done){
-      poly.render("index.jade", function(error, body){
+      poly.render("index.pug", function(error, body){
         should.not.exist(error)
         body.should.not.include("\n\n")
         done()
@@ -87,7 +87,7 @@ describe("templates", function(){
     })
 
     it("should pass in partials from the global object", function(done){
-      poly.render("index.jade", function(error, body){
+      poly.render("index.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>Sintaxi</h1>")
@@ -99,7 +99,7 @@ describe("templates", function(){
     })
 
     it("should return errors if error found", function(done){
-      poly.render("invalid.jade", function(error, body){
+      poly.render("invalid.pug", function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property("name")
@@ -110,7 +110,7 @@ describe("templates", function(){
     })
 
     it("should extend from a file with absolute path", function(done){
-      poly.render("extend.jade", function(error, body){
+      poly.render("extend.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>Sintaxi</h1>")
