@@ -12,7 +12,7 @@
 
 ### Supported Pre-Processors
 
-**HTML** – EJS, Jade, Markdown
+**HTML** – EJS, Pug (was Jade), Markdown
 **CSS** – LESS, Stylus, Sass (SCSS)
 **JavaScript** – CoffeeScript
 
@@ -43,7 +43,7 @@ var planet = terraform.root("path/to/public/dir", { "title": "Bitchin" })
 Step 3) render a file
 
 ```javascript
-planet.render('index.jade', { "title": "Override the global title" }, function(error, body){
+planet.render('index.pug', { "title": "Override the global title" }, function(error, body){
   console.log(body)
 })
 ```

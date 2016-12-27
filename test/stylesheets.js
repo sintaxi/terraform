@@ -206,7 +206,7 @@ describe("stylesheets", function(){
   //   var poly = polymer.root(root)
   //
   //   it("should be able to inline sass", function(done){
-  //     poly.render("index.jade", function(error, body){
+  //     poly.render("index.pug", function(error, body){
   //       console.log(body)
   //       body.should.eql("<html><style>body{background:#990000}</style></html>")
   //       done()

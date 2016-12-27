@@ -77,9 +77,9 @@ describe("errors", function(){
     })
   })
 
-  describe(".jade", function(){
-    it("should get errors obj from jade", function(done){
-      poly.render("jade/novar.jade", function(error, body){
+  describe(".pug", function(){
+    it("should get errors obj from pug", function(done){
+      poly.render("pug/novar.pug", function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')
@@ -93,7 +93,7 @@ describe("errors", function(){
     })
 
     it("should error with invalid file", function(done){
-      poly.render("jade/invalid.jade", function(error, body){
+      poly.render("pug/invalid.pug", function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')
@@ -107,7 +107,7 @@ describe("errors", function(){
     })
 
     it("should get template error even with valid layout", function(done){
-      poly.render("jade/novar.jade", { layout: "jade/_layout" }, function(error, body){
+      poly.render("pug/novar.pug", { layout: "pug/_layout" }, function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')
@@ -122,7 +122,7 @@ describe("errors", function(){
     })
 
     it("should get layout error even with invalid layout", function(done){
-      poly.render("jade/valid.jade", { layout: "jade/_invalid_layout" }, function(error, body){
+      poly.render("pug/valid.pug", { layout: "pug/_invalid_layout" }, function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')
@@ -137,7 +137,7 @@ describe("errors", function(){
     })
 
     it("should get correct partial error", function(done){
-      poly.render("jade/nested_one.jade", { layout: "jade/_layout" }, function(error, body){
+      poly.render("pug/nested_one.pug", { layout: "pug/_layout" }, function(error, body){
         should.not.exist(body)
         should.exist(error)
         error.should.have.property('source')

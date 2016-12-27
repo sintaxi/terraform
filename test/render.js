@@ -7,7 +7,7 @@ describe("render(path, callback)", function(){
     var root = __dirname + "/fixtures/render/underscores"
 
     it("should ignore file beginning with underscore", function(done){
-      polymer.root(root).render("_beep.jade", function(error, body){
+      polymer.root(root).render("_beep.pug", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
         done()
@@ -16,7 +16,7 @@ describe("render(path, callback)", function(){
 
 
     it("should ignore file if in dir beginning with underscore", function(done){
-      polymer.root(root).render("_foo/bar.jade", function(error, body){
+      polymer.root(root).render("_foo/bar.pug", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
         done()
@@ -26,7 +26,7 @@ describe("render(path, callback)", function(){
 
   describe('invalid paths', function(){
     it("should return (null, null) if file not present.", function(done){
-      polymer.root(__dirname + "/fixtures/data/valid").render("missing.jade", function(error, body){
+      polymer.root(__dirname + "/fixtures/data/valid").render("missing.pug", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
         done()
@@ -46,7 +46,7 @@ describe("render(path, callback)", function(){
 
     it("should use implicit layout if it exists", function(done){
       var root = __dirname + "/fixtures/render/layouts/implicit"
-      polymer.root(root).render("index.jade", function(errors, body){
+      polymer.root(root).render("index.pug", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
         body.should.include("<h1>Implicit Layout</h1>")
@@ -57,7 +57,7 @@ describe("render(path, callback)", function(){
 
     it("should not need to use any layout", function(done){
       var root = __dirname + "/fixtures/render/layouts/absent"
-      polymer.root(root).render("index.jade", function(errors, body){
+      polymer.root(root).render("index.pug", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
         body.should.not.include("Layout")
@@ -69,7 +69,7 @@ describe("render(path, callback)", function(){
     it("should use explicit layout if passed in", function(done){
       var root = __dirname + "/fixtures/render/layouts/explicit"
       var poly = polymer.root(root)
-      poly.render("index.jade", { layout: "custom_layout.jade" }, function(errors, body){
+      poly.render("index.pug", { layout: "custom_layout.pug" }, function(errors, body){
         should.not.exist(errors)
         should.exist(body)
         body.should.not.include('Default Layout')
@@ -82,7 +82,7 @@ describe("render(path, callback)", function(){
     it("should use explicit layout if present in data.json file", function(done){
       var root = __dirname + "/fixtures/render/layouts/explicit"
       var poly = polymer.root(root)
-      poly.render("about.jade", function(errors, body){
+      poly.render("about.pug", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
         body.should.not.include('Default Layout')
@@ -99,7 +99,7 @@ describe("render(path, callback)", function(){
     var poly = polymer.root(root)
 
     it("should have mixes partials with locals", function(done){
-      poly.render("index.jade", function(error, body){
+      poly.render("index.pug", function(error, body){
         should.not.exist(error)
         should.exist(body)
         body.should.include("<h1>Hello</h1>")
@@ -112,7 +112,7 @@ describe("render(path, callback)", function(){
     })
 
     it("should not render file with underscore", function(done){
-      poly.render("_places/brazil.jade", function(error, body){
+      poly.render("_places/brazil.pug", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
         done()
@@ -135,10 +135,10 @@ describe("render(path, callback)", function(){
 
   describe("internationalization", function(){
 
-    it("should render special characters in jade", function(done){
+    it("should render special characters in pug", function(done){
       var root = __dirname + "/fixtures/render/internationalization"
       var poly = polymer.root(root)
-      poly.render("jade.jade", function(errors, body){
+      poly.render("pug.pug", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
         body.should.include("<h1>“Iñtërnâtiônàlizætiøn”</h1>")
