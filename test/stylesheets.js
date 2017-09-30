@@ -23,6 +23,13 @@ describe("stylesheets", function(){
       })
     })
 
+    it("should allow empty css file", function(done){
+      poly.render("empty.less", function(error, body){
+        should.not.exist(error)
+        done()
+      })
+    })
+
     it("should minify beyond preprocessor", function(done){
       poly.render("main.less", function(error, body){
         should.not.exist(error)
