@@ -39,22 +39,22 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "6.2.3",
-    "coffee-script": "1.10.0",
-    "ejs": "2.3.4",
+    "autoprefixer": "7.1.6",
+    "coffee-script": "1.12.7",
+    "ejs": "2.5.7",
     "harp-minify": "0.4.0",
     "jjade": "1.11.1",
-    "less": "2.5.3",
-    "lodash": "3.10.1",
-    "lru-cache": "4.0.0",
-    "marked": "0.3.5",
+    "less": "^2.7.3",
+    "lodash": "4.17.4",
+    "lru-cache": "4.1.1",
+    "marked": "0.3.6",
     "node-sass": "4.7.2",
-    "postcss": "5.0.14",
+    "postcss": "6.0.14",
     "stylus": "0.54.5",
     "through": "2.3.8"
   },
   "devDependencies": {
-    "mocha": "3.4.2",
-    "should": "1.2.2"
+    "mocha": "4.0.1",
+    "should": "3.3.2"
   }
 }
