@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "Stephen Way",
     "Pierre Spring <pierre@nelm.io>",
     "John Boxall <john@mobify.com>",
-    "TJ Nicolaides <tjnicolaides@gmail.com>"
+    "TJ Nicolaides <tjnicolaides@gmail.com>",
     "Miguel Lopes <thelogicalpotato@gmail.com>"
   ],
   "license": "MIT",
