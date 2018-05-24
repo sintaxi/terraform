@@ -48,8 +48,8 @@
     "less": "^2.7.3",
     "lodash": "4.17.4",
     "lru-cache": "4.1.1",
-    "marked": "0.3.6",
-    "node-sass": "4.7.2",
+    "marked": "0.4.0",
+    "node-sass": "4.9.0",
     "postcss": "6.0.14",
     "stylus": "0.54.5",
     "through": "2.3.8"
