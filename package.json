@@ -46,7 +46,7 @@
     "harp-minify": "0.4.0",
     "jjade": "1.11.1",
     "less": "3.8.1",
-    "lodash": "4.17.4",
+    "lodash": "^4.17.11",
     "lru-cache": "4.1.1",
     "marked": "0.4.0",
     "node-sass": "4.9.3",
