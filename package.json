@@ -49,7 +49,7 @@
     "lodash": "4.17.4",
     "lru-cache": "4.1.1",
     "marked": "0.4.0",
-    "node-sass": "4.9.0",
+    "node-sass": "4.9.3",
     "postcss": "6.0.14",
     "stylus": "0.54.5",
     "through": "2.3.8"
