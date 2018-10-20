@@ -4,7 +4,7 @@
 
 ## Features
 
-- pre-processorse
+- pre-processors
 - layouts
 - partials
 - metadata (via _data.json)
