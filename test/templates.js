@@ -58,7 +58,10 @@ describe("templates", function(){
     it("should render table", function(done){
       poly.render("table.md", function(error, body){
         should.not.exist(error)
-        body.should.include("<table>\n<thead>\n<tr>\n<th>a</th>\n<th>b</th>\n<th>c</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td></td>\n<td>2</td>\n</tr>\n</tbody></table>")
+        body.should.include("<h2>Hello Table</h2>")
+        body.should.include("<table>")
+        body.should.include("<thead>")
+        body.should.include("<tbody>")
         done()
       })
     })
