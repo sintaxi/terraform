@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -51,7 +51,7 @@
     "lodash": "^4.17.15",
     "lru-cache": "4.1.1",
     "marked": "^0.7.0",
-    "node-sass": "4.9.3",
+    "node-sass": "4.12.*",
     "postcss": "6.0.14",
     "stylus": "0.54.5",
     "through": "2.3.8"
