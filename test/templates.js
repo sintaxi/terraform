@@ -25,6 +25,25 @@ describe("templates", function(){
     })
   })
 
+  describe(".liquid", function(){
+    it("should render liquid file", function(done){
+      poly.render("bio.liquid", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Hello Liquid</h1>")
+        done()
+      })
+    })
+
+    it("should minify beyond preprocessor", function(done){
+      poly.render("bio.liquid", function(error, body){
+        should.not.exist(error)
+        body.should.not.include("\n\n")
+        done()
+      })
+    })
+  })
+
   describe(".md", function(){
     it("should render markdown file", function(done){
       poly.render("stuff.md", function(error, body){
