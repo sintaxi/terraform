@@ -12,7 +12,7 @@
 
 ### Supported Pre-Processors
 
-**HTML** – EJS, Jade, Markdown
+**HTML** – EJS, Jade, Liquid, Markdown
 **CSS** – LESS, Stylus, Sass (SCSS)
 **JavaScript** – CoffeeScript
 

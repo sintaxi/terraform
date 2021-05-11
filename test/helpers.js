@@ -9,8 +9,8 @@ describe("helpers", function(){
     it('should return all possible file names for html ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('index.html')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(6)
-      var plist = "index.jade, index.ejs, index.md, index.html.jade, index.html.ejs, index.html.md".split(', ')
+      list.should.have.lengthOf(8)
+      var plist = "index.jade, index.ejs, index.liquid, index.md, index.html.jade, index.html.ejs, index.html.liquid, index.html.md".split(', ')
       list.should.eql(plist)
       done()
     })
@@ -35,27 +35,28 @@ describe("helpers", function(){
     it('should build priority list assuming template file when unknown.', function(done){
       var list = polymer.helpers.buildPriorityList('feed.xml')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.md'. split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('feed.xml.jade, feed.xml.ejs, feed.xml.liquid, feed.xml.md'. split(', '))
       done()
     })
 
     it('should look for templates on json files.', function(done){
       var list = polymer.helpers.buildPriorityList('profile.json')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
+      list.should.have.lengthOf(4)
       list.should.include('profile.json.jade')
       list.should.include('profile.json.ejs')
+      list.should.include('profile.json.liquid')
       list.should.include('profile.json.md')
-      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
+      list.should.eql('profile.json.jade, profile.json.ejs, profile.json.liquid, profile.json.md'. split(', '))
       done()
     })
 
     it('should look for templates when no ext present.', function(done){
       var list = polymer.helpers.buildPriorityList('appcache')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(3)
-      list.should.eql('appcache.jade, appcache.ejs, appcache.md'.split(', '))
+      list.should.have.lengthOf(4)
+      list.should.eql('appcache.jade, appcache.ejs, appcache.liquid, appcache.md'.split(', '))
       done()
     })
 
@@ -106,10 +107,19 @@ describe("helpers", function(){
       done()
     })
 
+    it('should convert liquid to html.', function(done){
+      polymer.helpers.outputPath('foobar.html').should.eql('foobar.html')
+      polymer.helpers.outputPath('foobar.liquid').should.eql('foobar.html')
+      polymer.helpers.outputPath('foobar.html.liquid').should.eql('foobar.html')
+      done()
+    })
+
     it('should allow alternate file extensions.', function(done){
       polymer.helpers.outputPath('foobar.foo').should.eql('foobar.foo')
       polymer.helpers.outputPath('foobar.bar.jade').should.eql('foobar.bar')
       polymer.helpers.outputPath('foobar.bar.ejs').should.eql('foobar.bar')
+      polymer.helpers.outputPath('foobar.bar.liquid').should.eql('foobar.bar')
+      polymer.helpers.outputPath('foobar.bar.md').should.eql('foobar.bar')
       done()
     })
 
@@ -117,6 +127,8 @@ describe("helpers", function(){
       polymer.helpers.outputPath('foobar.foo', false).should.eql('foobar.foo')
       polymer.helpers.outputPath('foobar.bar.jade', false).should.eql('foobar.bar.html')
       polymer.helpers.outputPath('foobar.bar.ejs', false).should.eql('foobar.bar.html')
+      polymer.helpers.outputPath('foobar.bar.liquid', false).should.eql('foobar.bar.html')
+      polymer.helpers.outputPath('foobar.bar.md', false).should.eql('foobar.bar.html')
       done()
     })
 
@@ -143,6 +155,7 @@ describe("helpers", function(){
       polymer.helpers.outputType("foo.html").should.eql("html")
       polymer.helpers.outputType("foo.jade").should.eql("html")
       polymer.helpers.outputType("foo.ejs").should.eql("html")
+      polymer.helpers.outputType("foo.liquid").should.eql("html")
       polymer.helpers.outputType("foo.md").should.eql("html")
       polymer.helpers.outputType("foo.css").should.eql("css")
       polymer.helpers.outputType("foo.less").should.eql("css")
