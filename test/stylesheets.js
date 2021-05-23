@@ -11,7 +11,7 @@ describe("stylesheets", function(){
     it("should have basic css file", function(done){
       poly.render("main.less", function(error, body){
         should.not.exist(error)
-        body.should.include("background:#ffc0cb")
+        body.indexOf("background").should.not.equal(-1)
         done()
       })
     })
