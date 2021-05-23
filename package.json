@@ -42,7 +42,6 @@
   "license": "MIT",
   "dependencies": {
     "ejs": "2.5.7",
-    "less": "3.8.1",
     "lru-cache": "4.1.1",
     "marked": "^0.7.0",
     "sass": "^1.29.0",
@@ -50,6 +49,7 @@
   },
   "devDependencies": {
     "coffeescript": "^2.5.1",
+    "less": "^4.1.1",
     "mocha": "^8.4.0",
     "should": "3.3.2",
     "stylus": "0.54.8"
