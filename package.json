@@ -41,7 +41,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "7.1.6",
     "coffee-script": "1.12.7",
     "ejs": "2.5.7",
     "js-yaml": "^3.13.1",
@@ -49,7 +48,6 @@
     "lodash": "^4.17.15",
     "lru-cache": "4.1.1",
     "marked": "^0.7.0",
-    "postcss": "6.0.14",
     "sass": "^1.29.0",
     "stylus": "0.54.8",
     "through": "2.3.8"
