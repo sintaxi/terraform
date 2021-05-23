@@ -41,7 +41,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "coffee-script": "1.12.7",
     "ejs": "2.5.7",
     "js-yaml": "^3.13.1",
     "less": "3.8.1",
@@ -52,6 +51,7 @@
     "through": "2.3.8"
   },
   "devDependencies": {
+    "coffeescript": "^2.5.1",
     "mocha": "^8.4.0",
     "should": "3.3.2",
     "stylus": "0.54.8"
