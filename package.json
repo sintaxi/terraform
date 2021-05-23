@@ -49,11 +49,11 @@
     "lru-cache": "4.1.1",
     "marked": "^0.7.0",
     "sass": "^1.29.0",
-    "stylus": "0.54.8",
     "through": "2.3.8"
   },
   "devDependencies": {
     "mocha": "^8.4.0",
-    "should": "3.3.2"
+    "should": "3.3.2",
+    "stylus": "0.54.8"
   }
 }
