@@ -42,7 +42,6 @@
   "license": "MIT",
   "dependencies": {
     "ejs": "2.5.7",
-    "js-yaml": "^3.13.1",
     "less": "3.8.1",
     "lru-cache": "4.1.1",
     "marked": "^0.7.0",
