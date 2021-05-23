@@ -1,6 +1,5 @@
 var should    = require('should')
 var polymer   = require('../')
-var yaml      = require('js-yaml')
 
 describe("data", function(){
 
