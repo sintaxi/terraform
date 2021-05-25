@@ -68,6 +68,31 @@ describe("javascripts", function(){
     })
   })
 
+  describe(".jsx", function(){
+    var root = __dirname + "/fixtures/javascripts/jsx"
+    var poly = polymer.root(root)
+
+    it("should translate to javascript", function(done){
+      poly.render("main.jsx", function(errors, body){
+        should.not.exist(errors)
+        should.exist(body)
+        done()
+      })
+    })
+
+    // not even sure this is possible
+    it("should return errors if invalid javascript", function(done){
+      poly.render("invalid.jsx", function(errors, body){
+        should.exist(errors)
+        should.not.exist(body)
+        errors.should.have.property("name")
+        errors.should.have.property("message")
+        errors.should.have.property("stack")
+        done()
+      })
+    })
+  })
+
   // describe("browserify", function() {
   // 	var root = __dirname + "/fixtures/javascripts/browserify"
 	 //  var poly = polymer.root(root)

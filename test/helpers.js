@@ -26,8 +26,16 @@ describe("helpers", function(){
     it('should return all possible file names for js ordered by priority.', function(done){
       var list = polymer.helpers.buildPriorityList('/js/bundle.js')
       list.should.be.an.instanceOf(Array)
-      var plist = "js/bundle.cjs, js/bundle.coffee, js/bundle.js.cjs, js/bundle.js.coffee".split(', ')
-      list.should.eql(plist)
+      
+      list.should.eql([
+        "js/bundle.jsx",
+        "js/bundle.cjs",
+        "js/bundle.coffee",
+        "js/bundle.js.jsx",
+        "js/bundle.js.cjs",
+        "js/bundle.js.coffee"
+      ])
+
       done()
     })
 
