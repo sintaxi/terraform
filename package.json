@@ -8,7 +8,8 @@
   },
   "main": "./lib/terraform",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test"    : "mocha --reporter spec",
+    "test:css": "mocha test/stylesheets --reporter spec"
   },
   "author": "Brock Whitten <brock@chloi.io>",
   "contributors": [

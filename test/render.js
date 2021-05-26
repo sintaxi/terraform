@@ -33,13 +33,38 @@ describe("render(path, callback)", function(){
       })
     })
 
-    it("should handle missing stylesheet file.", function(done){
+    it("should handle missing less file.", function(done){
       polymer.root(__dirname + "/fixtures/data/valid").render("missing.less", function(error, body){
         should.not.exist(error)
         should.not.exist(body)
         done()
       })
     })
+
+    it("should handle missing styl file.", function(done){
+      polymer.root(__dirname + "/fixtures/data/valid").render("missing.styl", function(error, body){
+        should.not.exist(error)
+        should.not.exist(body)
+        done()
+      })
+    })
+
+    it("should handle missing scss file.", function(done){
+      polymer.root(__dirname + "/fixtures/data/valid").render("missing.scss", function(error, body){
+        should.not.exist(error)
+        should.not.exist(body)
+        done()
+      })
+    })
+
+    it("should handle missing sass file.", function(done){
+      polymer.root(__dirname + "/fixtures/data/valid").render("missing.sass", function(error, body){
+        should.not.exist(error)
+        should.not.exist(body)
+        done()
+      })
+    })
+
   })
 
   describe("layouts", function(){
