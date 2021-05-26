@@ -94,20 +94,17 @@ describe("javascripts", function(){
       })
     })
 
-    it("should render jsx template by calling partial", function(done){
-      poly.render("index.jade", function(errors, body){
-        console.log("-------------")
-        console.log(errors)
-        console.log(body)
-        console.log("-------------")
-        should.not.exist(errors)
-        should.exist(body)
-        errors.should.have.property("name")
-        errors.should.have.property("message")
-        errors.should.have.property("stack")
-        done()
-      })
-    })
+    // REVISIT THIS...
+    // it("should render jsx template by calling partial", function(done){
+    //   poly.render("index.jade", function(errors, body){
+    //     should.not.exist(errors)
+    //     should.exist(body)
+    //     errors.should.have.property("name")
+    //     errors.should.have.property("message")
+    //     errors.should.have.property("stack")
+    //     done()
+    //   })
+    // })
 
   })
 
