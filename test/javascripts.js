@@ -73,7 +73,9 @@ describe("javascripts", function(){
     var poly = polymer.root(root)
 
     it("should translate to javascript", function(done){
-      poly.render("main.jsx", function(errors, body){
+      poly.render("header.jsx", function(errors, body){
+        // console.log(errors)
+        // console.log(body)
         should.not.exist(errors)
         should.exist(body)
         done()
@@ -91,6 +93,22 @@ describe("javascripts", function(){
         done()
       })
     })
+
+    it("should render jsx template by calling partial", function(done){
+      poly.render("index.jade", function(errors, body){
+        console.log("-------------")
+        console.log(errors)
+        console.log(body)
+        console.log("-------------")
+        should.not.exist(errors)
+        should.exist(body)
+        errors.should.have.property("name")
+        errors.should.have.property("message")
+        errors.should.have.property("stack")
+        done()
+      })
+    })
+
   })
 
   // describe("browserify", function() {

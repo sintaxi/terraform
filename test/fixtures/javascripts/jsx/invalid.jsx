@@ -1,7 +1,7 @@
 
-export default function(props) {
+export defalt function(props) {
   const { name } = props;
   return (
     <h1>{ name }</h1>
-  )
+  );
 }
