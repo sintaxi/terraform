@@ -8,7 +8,7 @@
   },
   "main": "./lib/terraform",
   "scripts": {
-    "test"    : "mocha --reporter spec",
+    "test": "mocha --reporter spec",
     "test:css": "mocha test/stylesheets --reporter spec"
   },
   "author": "Brock Whitten <brock@chloi.io>",
@@ -42,10 +42,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "ejs": "2.5.7",
+    "ejs": "^3.1.6",
     "esbuild": "^0.12.1",
     "lru-cache": "4.1.1",
-    "marked": "^0.7.0",
+    "marked": "^2.0.6",
     "react": "^17.0.2",
     "sass": "^1.29.0",
     "through": "2.3.8"
