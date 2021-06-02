@@ -162,6 +162,7 @@ describe("helpers", function(){
 
     it('should return true if file begins with underscore.', function(done){
       polymer.helpers.shouldIgnore('_foo.html').should.be.true
+      polymer.helpers.shouldIgnore('%5ffoo.html').should.be.true
       done()
     })
 
@@ -170,6 +171,10 @@ describe("helpers", function(){
       polymer.helpers.shouldIgnore('foo_.html').should.be.false
       polymer.helpers.shouldIgnore('f_oo.html').should.be.false
       polymer.helpers.shouldIgnore('f____.html').should.be.false
+      polymer.helpers.shouldIgnore('foo.html').should.be.false
+      polymer.helpers.shouldIgnore('foo%5f.html').should.be.false
+      polymer.helpers.shouldIgnore('f%5foo.html').should.be.false
+      polymer.helpers.shouldIgnore('f%5f%5f%5f%5f.html').should.be.false
       done()
     })
 
@@ -178,30 +183,33 @@ describe("helpers", function(){
       polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.html')).should.be.true
       polymer.helpers.shouldIgnore(path.join('_foo', 'bar', 'baz.html')).should.be.true
       polymer.helpers.shouldIgnore(path.sep + path.join('_foo', 'bar', 'baz.html')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar.html')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.html')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('%5ffoo', 'bar', 'baz.html')).should.be.true
+      polymer.helpers.shouldIgnore(path.sep + path.join('%5ffoo', 'bar', 'baz.html')).should.be.true
       done()
     })
 
     it('should ignore if starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('_beep.json')
-      reply.should.be.true
+      polymer.helpers.shouldIgnore('_beep.json').should.be.true
+      polymer.helpers.shouldIgnore('%5fbeep.json').should.be.true
       done()
     })
 
     it('should not ignore if doesnt start with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore('boop.json')
-      reply.should.be.false
+      polymer.helpers.shouldIgnore('boop.json').should.be.false
       done()
     })
 
     it('should ignore if nested file starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore(path.join('beep', '_boop.json'))
-      reply.should.be.true
+      polymer.helpers.shouldIgnore(path.join('beep', '_boop.json')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('beep', '%5fboop.json')).should.be.true
       done()
     })
 
     it('should ignore any part of tree starts with underscore.', function(done){
-      var reply = polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.json'))
-      reply.should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.json')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.json')).should.be.true
       done()
     })
 
@@ -224,8 +232,8 @@ describe("helpers", function(){
     })
 
     it('should allow underscore in names.', function(done){
-      var reply = polymer.helpers.shouldIgnore(path.join('foo_', 'beep.json'))
-      reply.should.be.false
+      polymer.helpers.shouldIgnore(path.join('foo_', 'beep.json')).should.be.false
+      polymer.helpers.shouldIgnore(path.join('foo%5f', 'beep.json')).should.be.false
       done()
     })
 
