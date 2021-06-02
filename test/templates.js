@@ -89,6 +89,14 @@ describe("templates", function(){
       })
     })
 
+    // it("should support filters", function(done){
+    //   poly.render("filters.jade", function(error, body){
+    //     should.not.exist(error)
+    //     body.should.include('<h1>hello markdown</h1>')
+    //     done()
+    //   })
+    // })
+
     it("should minify beyond preprocessor", function(done){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
