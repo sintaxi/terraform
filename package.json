@@ -1,6 +1,6 @@
 {
   "name": "terraform",
-  "version": "1.20.0",
+  "version": "1.20.2",
   "description": "pre-processor engine that powers the harp web server",
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "ejs": "^3.1.6",
     "esbuild": "^0.12.1",
     "lru-cache": "4.1.1",
-    "marked": "^2.0.6",
+    "marked": "^4.0.10",
     "react": "^17.0.2",
     "sass": "^1.29.0",
     "through": "2.3.8"
@@ -55,6 +55,6 @@
     "less": "^4.1.1",
     "mocha": "^8.4.0",
     "should": "3.3.2",
-    "stylus": "0.54.8"
+    "stylus": "^0.56.0"
   }
 }
