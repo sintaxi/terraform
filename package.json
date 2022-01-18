@@ -48,6 +48,7 @@
     "marked": "^4.0.10",
     "react": "^17.0.2",
     "sass": "^1.29.0",
+    "svelte": "^3.46.2",
     "through": "2.3.8"
   },
   "devDependencies": {
