@@ -42,19 +42,24 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "devalue": "^2.0.1",
     "ejs": "^3.1.6",
     "esbuild": "^0.12.1",
+    "esbuild-svelte": "^0.6.2",
     "lru-cache": "4.1.1",
     "marked": "^4.0.10",
     "react": "^17.0.2",
+    "require-from-string": "^2.0.2",
     "sass": "^1.29.0",
     "svelte": "^3.46.2",
     "through": "2.3.8"
   },
   "devDependencies": {
     "coffeescript": "^2.5.1",
+    "eslint": "^8.7.0",
     "less": "^4.1.1",
     "mocha": "^8.4.0",
+    "prettier": "^2.5.1",
     "should": "3.3.2",
     "stylus": "^0.56.0"
   }
