@@ -48,7 +48,6 @@ describe("javascripts", function(){
 
     it("should translate to javascript", function(done){
       poly.render("main.cjs", function(errors, body){
-        console.log(body)
         should.not.exist(errors)
         should.exist(body)
         done()
@@ -74,8 +73,6 @@ describe("javascripts", function(){
 
     it("should translate to javascript", function(done){
       poly.render("header.jsx", function(errors, body){
-        // console.log(errors)
-        // console.log(body)
         should.not.exist(errors)
         should.exist(body)
         done()
