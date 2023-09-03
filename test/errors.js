@@ -45,7 +45,22 @@ describe("errors", function(){
         done()
       })
     })
+
+    it("should get error when import is not there", function(done){
+      poly.render("less/noimport.less", function(error, body){
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source')
+        error.should.have.property('dest')
+        error.should.have.property('lineno', 1)
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack', '@import \\"missing\\";', 'must escape quotes for CSS content')
+        done()
+      })
+    })
   })
+
 
   describe(".ejs", function(){
     it("should get error if var missing var", function(done){
@@ -179,6 +194,21 @@ describe("errors", function(){
         error.should.have.property('filename')
         error.should.have.property('message')
         error.should.have.property('stack')
+        done()
+      })
+    })
+
+    it("should get error when import is not there", function(done){
+      poly.render("styl/noimport.styl", function(error, body){
+        console.log(error)
+        should.not.exist(body)
+        should.exist(error)
+        error.should.have.property('source', "Stylus")
+        error.should.have.property('dest', "CSS")
+        error.should.have.property('lineno', 1)
+        error.should.have.property('filename')
+        error.should.have.property('message')
+        error.should.have.property('stack', '@import \\"missing\\";', 'must escape quotes for CSS content')
         done()
       })
     })
