@@ -49,7 +49,7 @@
     "esbuild": "0.28.1",
     "lru-cache": "10.0.0",
     "marked": "5.1.2",
-    "sass": "1.64.1"
+    "sass": "1.101.0"
   },
   "devDependencies": {
     "coffeescript": "2.7.0",
