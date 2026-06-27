@@ -11,8 +11,8 @@ describe("data", function(){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>My Articles</h1>")
-        body.should.include('<h5 class="feature">Earth people, New York to California</h5>')
+        body.should.containEql("<h1>My Articles</h1>")
+        body.should.containEql('<h5 class="feature">Earth people, New York to California</h5>')
         done()
       })
     })
@@ -21,8 +21,8 @@ describe("data", function(){
       poly.render("articles/hello-jupiter.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h3>I was born on Jupiter</h3>")
-        body.should.include("<h4>Brock Whitten</h4>")
+        body.should.containEql("<h3>I was born on Jupiter</h3>")
+        body.should.containEql("<h4>Brock Whitten</h4>")
         done()
       })
     })
@@ -31,7 +31,7 @@ describe("data", function(){
       poly.render("articles/hello-pluto.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1><a href=\"http://harpjs.com\">Harp</a></h1>")
+        body.should.containEql("<h1><a href=\"http://harpjs.com\">Harp</a></h1>")
         done()
       })
     })
@@ -41,8 +41,8 @@ describe("data", function(){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h3>I was born on Jupiter</h3>")
-        body.should.include("<h4>Kool Keith</h4>")
+        body.should.containEql("<h3>I was born on Jupiter</h3>")
+        body.should.containEql("<h4>Kool Keith</h4>")
         done()
       })
     })

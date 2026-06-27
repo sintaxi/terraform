@@ -55,7 +55,7 @@
     "coffeescript": "2.7.0",
     "less": "4.6.7",
     "mocha": "11.7.6",
-    "should": "3.3.2",
+    "should": "13.2.3",
     "stylus": "0.64.0"
   }
 }

@@ -52,9 +52,9 @@ describe("helpers", function(){
       var list = polymer.helpers.buildPriorityList('profile.json')
       list.should.be.an.instanceOf(Array)
       list.should.have.lengthOf(3)
-      list.should.include('profile.json.jade')
-      list.should.include('profile.json.ejs')
-      list.should.include('profile.json.md')
+      list.should.containEql('profile.json.jade')
+      list.should.containEql('profile.json.ejs')
+      list.should.containEql('profile.json.md')
       list.should.eql('profile.json.jade, profile.json.ejs, profile.json.md'. split(', '))
       done()
     })
@@ -161,79 +161,79 @@ describe("helpers", function(){
   describe('.shouldIgnore(filename)', function(){
 
     it('should return true if file begins with underscore.', function(done){
-      polymer.helpers.shouldIgnore('_foo.html').should.be.true
-      polymer.helpers.shouldIgnore('%5ffoo.html').should.be.true
+      polymer.helpers.shouldIgnore('_foo.html').should.be.true()
+      polymer.helpers.shouldIgnore('%5ffoo.html').should.be.true()
       done()
     })
 
     it('should return false file doesnt end with underscore.', function(done){
-      polymer.helpers.shouldIgnore('foo.html').should.be.false
-      polymer.helpers.shouldIgnore('foo_.html').should.be.false
-      polymer.helpers.shouldIgnore('f_oo.html').should.be.false
-      polymer.helpers.shouldIgnore('f____.html').should.be.false
-      polymer.helpers.shouldIgnore('foo.html').should.be.false
-      polymer.helpers.shouldIgnore('foo%5f.html').should.be.false
-      polymer.helpers.shouldIgnore('f%5foo.html').should.be.false
-      polymer.helpers.shouldIgnore('f%5f%5f%5f%5f.html').should.be.false
+      polymer.helpers.shouldIgnore('foo.html').should.be.false()
+      polymer.helpers.shouldIgnore('foo_.html').should.be.false()
+      polymer.helpers.shouldIgnore('f_oo.html').should.be.false()
+      polymer.helpers.shouldIgnore('f____.html').should.be.false()
+      polymer.helpers.shouldIgnore('foo.html').should.be.false()
+      polymer.helpers.shouldIgnore('foo%5f.html').should.be.false()
+      polymer.helpers.shouldIgnore('f%5foo.html').should.be.false()
+      polymer.helpers.shouldIgnore('f%5f%5f%5f%5f.html').should.be.false()
       done()
     })
 
     it('should return true if any directory in path starts with underscore.', function(done){
-      polymer.helpers.shouldIgnore(path.join('foo', '_bar.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('_foo', 'bar', 'baz.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.sep + path.join('_foo', 'bar', 'baz.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('%5ffoo', 'bar', 'baz.html')).should.be.true
-      polymer.helpers.shouldIgnore(path.sep + path.join('%5ffoo', 'bar', 'baz.html')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '_bar.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('_foo', 'bar', 'baz.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.sep + path.join('_foo', 'bar', 'baz.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('%5ffoo', 'bar', 'baz.html')).should.be.true()
+      polymer.helpers.shouldIgnore(path.sep + path.join('%5ffoo', 'bar', 'baz.html')).should.be.true()
       done()
     })
 
     it('should ignore if starts with underscore.', function(done){
-      polymer.helpers.shouldIgnore('_beep.json').should.be.true
-      polymer.helpers.shouldIgnore('%5fbeep.json').should.be.true
+      polymer.helpers.shouldIgnore('_beep.json').should.be.true()
+      polymer.helpers.shouldIgnore('%5fbeep.json').should.be.true()
       done()
     })
 
     it('should not ignore if doesnt start with underscore.', function(done){
-      polymer.helpers.shouldIgnore('boop.json').should.be.false
+      polymer.helpers.shouldIgnore('boop.json').should.be.false()
       done()
     })
 
     it('should ignore if nested file starts with underscore.', function(done){
-      polymer.helpers.shouldIgnore(path.join('beep', '_boop.json')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('beep', '%5fboop.json')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('beep', '_boop.json')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('beep', '%5fboop.json')).should.be.true()
       done()
     })
 
     it('should ignore any part of tree starts with underscore.', function(done){
-      polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.json')).should.be.true
-      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.json')).should.be.true
+      polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.json')).should.be.true()
+      polymer.helpers.shouldIgnore(path.join('foo', '%5fbar', 'baz.json')).should.be.true()
       done()
     })
 
     it('should ignore .git dirs', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('.git', 'foo.json'))
-      reply.should.be.true
+      reply.should.be.true()
       done()
     })
 
     it('should ignore .gitignore files', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('.gitignore'))
-      reply.should.be.true
+      reply.should.be.true()
       done()
     })
 
     it('should not ignore if no part of tree starts with underscore.', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('foo', 'bar', 'baz.json'))
-      reply.should.be.false
+      reply.should.be.false()
       done()
     })
 
     it('should allow underscore in names.', function(done){
-      polymer.helpers.shouldIgnore(path.join('foo_', 'beep.json')).should.be.false
-      polymer.helpers.shouldIgnore(path.join('foo%5f', 'beep.json')).should.be.false
+      polymer.helpers.shouldIgnore(path.join('foo_', 'beep.json')).should.be.false()
+      polymer.helpers.shouldIgnore(path.join('foo%5f', 'beep.json')).should.be.false()
       done()
     })
 
@@ -242,20 +242,20 @@ describe("helpers", function(){
   describe('.isTemplate(filename)', function(){
 
     it('should return true if jade file.', function(done){
-      polymer.helpers.isTemplate(path.join('foo.jade')).should.be.true
-      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.jade')).should.be.true
+      polymer.helpers.isTemplate(path.join('foo.jade')).should.be.true()
+      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.jade')).should.be.true()
       done()
     })
 
     it('should return true if markdown file.', function(done){
-      polymer.helpers.isTemplate(path.join('foo.md')).should.be.true
-      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.md')).should.be.true
+      polymer.helpers.isTemplate(path.join('foo.md')).should.be.true()
+      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.md')).should.be.true()
       done()
     })
 
     it('should return false if less file.', function(done){
-      polymer.helpers.isTemplate(path.join('foo.less')).should.be.false
-      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.less')).should.be.false
+      polymer.helpers.isTemplate(path.join('foo.less')).should.be.false()
+      polymer.helpers.isTemplate(path.join('foo', 'bar', 'baz.less')).should.be.false()
       done()
     })
 
@@ -263,40 +263,40 @@ describe("helpers", function(){
 
   describe('.isStylesheet(filename)', function(){
     it('should return true if less file.', function(done){
-      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true
-      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true
+      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true()
+      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true()
       done()
     })
 
     it('should return false if jade file.', function(done){
-      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true
-      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true
+      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true()
+      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true()
       done()
     })
   })
 
   describe('.isJavaScript(filename)', function(){
     it('should return true if coffescript file.', function(done){
-      polymer.helpers.isJavaScript(path.join('foo.coffee')).should.be.true
-      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.coffee')).should.be.true
+      polymer.helpers.isJavaScript(path.join('foo.coffee')).should.be.true()
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.coffee')).should.be.true()
       done()
     })
 
     it('should return true if javascript file.', function(done){
-      polymer.helpers.isJavaScript(path.join('foo.js')).should.be.false
-      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.js')).should.be.false
+      polymer.helpers.isJavaScript(path.join('foo.js')).should.be.false()
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'baz.js')).should.be.false()
       done()
     })
 
     it('should return true if minified javascript file.', function(done){
-      polymer.helpers.isJavaScript(path.join('foo.min.js')).should.be.false
-      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'bas.min.js')).should.be.false
+      polymer.helpers.isJavaScript(path.join('foo.min.js')).should.be.false()
+      polymer.helpers.isJavaScript(path.join('foo', 'bar', 'bas.min.js')).should.be.false()
       done()
     })
 
     it('should return false if less file.', function(done){
-      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true
-      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true
+      polymer.helpers.isStylesheet(path.join('foo.less')).should.be.true()
+      polymer.helpers.isStylesheet(path.join('foo', 'bar', 'baz.less')).should.be.true()
       done()
     })
   })

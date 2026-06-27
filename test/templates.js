@@ -11,7 +11,7 @@ describe("templates", function(){
       poly.render("bio.ejs", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Hello EJS</h1>")
+        body.should.containEql("<h1>Hello EJS</h1>")
         done()
       })
     })
@@ -19,7 +19,7 @@ describe("templates", function(){
     it("should minify beyond preprocessor", function(done){
       poly.render("bio.ejs", function(error, body){
         should.not.exist(error)
-        body.should.not.include("\n\n")
+        body.should.not.containEql("\n\n")
         done()
       })
     })
@@ -30,10 +30,10 @@ describe("templates", function(){
       poly.render("stuff.md", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>hello markdown</h1>")
-        body.should.include("<p>")
-        body.should.include('<code class="language-json">')
-        body.should.not.include('<code class="lang-json">')
+        body.should.containEql("<h1>hello markdown</h1>")
+        body.should.containEql("<p>")
+        body.should.containEql('<code class="language-json">')
+        body.should.not.containEql('<code class="lang-json">')
         done()
       })
     })
@@ -41,7 +41,7 @@ describe("templates", function(){
     it("should minify beyond preprocessor", function(done){
       poly.render("stuff.md", function(error, body){
         should.not.exist(error)
-        body.should.not.include("\n\n")
+        body.should.not.containEql("\n\n")
         done()
       })
     })
@@ -50,7 +50,7 @@ describe("templates", function(){
       poly.render("bom.md", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>file with bom marker</h1>")
+        body.should.containEql("<h1>file with bom marker</h1>")
         done()
       })
     })
@@ -58,10 +58,10 @@ describe("templates", function(){
     it("should render table", function(done){
       poly.render("table.md", function(error, body){
         should.not.exist(error)
-        body.should.include("<h2>Hello Table</h2>")
-        body.should.include("<table>")
-        body.should.include("<thead>")
-        body.should.include("<tbody>")
+        body.should.containEql("<h2>Hello Table</h2>")
+        body.should.containEql("<table>")
+        body.should.containEql("<thead>")
+        body.should.containEql("<tbody>")
         done()
       })
     })
@@ -81,10 +81,10 @@ describe("templates", function(){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Sintaxi</h1>")
-        body.should.include("<h2>Hello World</h2>")
-        body.should.include("<h3>Brock Whitten</h3>")
-        body.should.include("<h4>Vancouver</h4>")
+        body.should.containEql("<h1>Sintaxi</h1>")
+        body.should.containEql("<h2>Hello World</h2>")
+        body.should.containEql("<h3>Brock Whitten</h3>")
+        body.should.containEql("<h4>Vancouver</h4>")
         done()
       })
     })
@@ -92,7 +92,7 @@ describe("templates", function(){
     it("should support filters", function(done){
       poly.render("filters.jade", function(error, body){
         should.not.exist(error)
-        body.should.include('<h1>hello markdown</h1>')
+        body.should.containEql('<h1>hello markdown</h1>')
         done()
       })
     })
@@ -100,7 +100,7 @@ describe("templates", function(){
     it("should minify beyond preprocessor", function(done){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
-        body.should.not.include("\n\n")
+        body.should.not.containEql("\n\n")
         done()
       })
     })
@@ -109,10 +109,10 @@ describe("templates", function(){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Sintaxi</h1>")
-        body.should.include("<h2>Hello World</h2>")
-        body.should.include("<h3>Brock Whitten</h3>")
-        body.should.include("<h4>Vancouver</h4>")
+        body.should.containEql("<h1>Sintaxi</h1>")
+        body.should.containEql("<h2>Hello World</h2>")
+        body.should.containEql("<h3>Brock Whitten</h3>")
+        body.should.containEql("<h4>Vancouver</h4>")
         done()
       })
     })
@@ -132,10 +132,10 @@ describe("templates", function(){
       poly.render("extend.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<h1>Sintaxi</h1>")
-        body.should.include("<h2>Hello World</h2>")
-        body.should.include("<h3>Brock Whitten</h3>")
-        body.should.include("<h4>Vancouver</h4>")
+        body.should.containEql("<h1>Sintaxi</h1>")
+        body.should.containEql("<h2>Hello World</h2>")
+        body.should.containEql("<h3>Brock Whitten</h3>")
+        body.should.containEql("<h4>Vancouver</h4>")
         done()
       })
     })

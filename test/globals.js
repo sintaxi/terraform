@@ -12,7 +12,7 @@ describe("data", function(){
       poly.render("index.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<title>Default Title</title>")
+        body.should.containEql("<title>Default Title</title>")
         done()
       })
     })
@@ -21,7 +21,7 @@ describe("data", function(){
       poly.render("about.jade", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<title>About Page</title>")
+        body.should.containEql("<title>About Page</title>")
         done()
       })
     })
