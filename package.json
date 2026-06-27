@@ -46,7 +46,7 @@
   "license": "MIT",
   "dependencies": {
     "ejs": "3.1.9",
-    "esbuild": "0.18.17",
+    "esbuild": "0.28.1",
     "lru-cache": "10.0.0",
     "marked": "5.1.2",
     "sass": "1.64.1"
