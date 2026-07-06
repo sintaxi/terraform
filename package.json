@@ -10,6 +10,7 @@
   "scripts": {
     "prepare": "git config core.hooksPath ./hooks",
     "test": "mocha test",
+    "test:watch": "mocha test --watch",
     "preversion": "npm test",
     "version": "npm publish",
     "postversion": "git push --no-verify && git push --tags --no-verify"
