@@ -92,6 +92,43 @@ describe("helpers", function(){
     })
   })
 
+  describe('.findFirstFile(dir, list)', function(){
+    var root = path.join(__dirname, 'fixtures', 'helpers', 'multi')
+
+    it('should return the first existing file in priority order', function(done){
+      polymer.helpers.findFirstFile(root, ['_layout.jade', '_layout.ejs']).should.eql('_layout.jade')
+      polymer.helpers.findFirstFile(root, ['_layout.ejs', '_layout.jade']).should.eql('_layout.ejs')
+      polymer.helpers.findFirstFile(root, ['_layout.md', '_layout.ejs']).should.eql('_layout.ejs')
+      should(polymer.helpers.findFirstFile(root, ['_layout.md', '_layout.styl'])).be.null()
+      done()
+    })
+
+    it('should not mutate the list it is given', function(done){
+      var list = ['_layout.jade', '_layout.ejs']
+      polymer.helpers.findFirstFile(root, list)
+      list.should.eql(['_layout.jade', '_layout.ejs'])
+      done()
+    })
+
+    it('should return the same result on repeated calls with the same list', function(done){
+      var list = polymer.helpers.buildPriorityList('_layout.html')
+      for(var i = 0; i < 4; i++){
+        polymer.helpers.findFirstFile(root, list).should.eql('_layout.jade')
+      }
+      done()
+    })
+  })
+
+  describe('.findNearestLayout(root, filename) with competing layouts', function(){
+    it('should pick the same layout every time', function(done){
+      var root = path.join(__dirname, 'fixtures', 'helpers', 'multi')
+      for(var i = 0; i < 4; i++){
+        polymer.helpers.findNearestLayout(root, "").should.eql('_layout.jade')
+      }
+      done()
+    })
+  })
+
   describe('.outputPath(filename)', function(){
     it('should convert jade to html.', function(done){
       polymer.helpers.outputPath('foobar.html').should.eql('foobar.html')
