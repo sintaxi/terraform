@@ -16,10 +16,18 @@ describe("templates", function(){
       })
     })
 
-    it("should minify beyond preprocessor", function(done){
-      poly.render("bio.ejs", function(error, body){
+    it("should keep the template's whitespace", function(done){
+      poly.render("whitespace.txt.ejs", function(error, body){
         should.not.exist(error)
-        body.should.not.containEql("\n\n")
+        body.should.containEql("first\n\n  indented two\n\n")
+        done()
+      })
+    })
+
+    it("should include a file's source untouched", function(done){
+      poly.render("whitespace.txt.ejs", function(error, body){
+        should.not.exist(error)
+        body.should.containEql(require("fs").readFileSync(root + "/stuff.md", "utf8"))
         done()
       })
     })
